@@ -1,0 +1,46 @@
+<!--pages/home/home.wxml-->
+<view class="top">
+  <input type="text" bindinput="getvalue" class="text" />
+  <view class="add" bindtap="add">添加</view>
+</view>
+<view class="wei">
+  <view class="left">
+    未完成
+  </view>
+  <view class="js">
+    {{a}}
+  </view>
+</view>
+<view class="ul1">
+  <view class="li" wx:for="{{list}}" wx:key="index" wx:if="{{item.flag==false}}">
+    <view class="name">
+      <checkbox  bindtap="change" data-i="{{index}}"></checkbox>
+      <view class="value">{{item.name}}</view>
+    </view>
+    <view class="del" bindtap="del" data-index="{{index}}">
+      删除
+    </view>
+  </view>
+</view>
+<!-- 已完成 -->
+<view class="wei">
+  <view class="left">
+    已完成
+  </view>
+  <view class="js">
+    {{b}}
+  </view>
+</view>
+<view class="ul1">
+
+  <view class="li" wx:for="{{list}}" wx:key="index" wx:if="{{item.flag==true}}">
+    <view class="name">
+      <checkbox checked bindtap="change" data-i="{{index}}"></checkbox>
+      <view class="value">{{item.name}}</view>
+    </view>
+    <view class="del" bindtap="del" data-index="{{index}}">
+      删除
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,43 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/home/home",
+    "pages/xx/xx",
+    "pages/sz/sz",
+    "pages/my/my",
+    "pages/zx/zx"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "云台法律咨询",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+
+    "list": [{
+      "pagePath": "pages/home/home",
+      "text": "首页",
+      "iconPath": "/imgs/shouye-2.png"
+    },{
+      "pagePath": "pages/xx/xx",
+      "text": "消息",
+      "iconPath": "/imgs/zixun.png"
+    },
+    {
+      "pagePath": "pages/zx/zx",
+      "iconPath": "/imgs/加.png"
+    },{
+      "pagePath": "pages/sz/sz",
+      "text": "诉状",
+      "iconPath": "/imgs/jilu-2(1).png"
+    },{
+      "pagePath": "pages/my/my",
+      "text": "我的",
+      "iconPath": "/imgs/wode-weixuanzhong.png"
+    }]
+  }
+}

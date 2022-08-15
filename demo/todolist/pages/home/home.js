@@ -5,60 +5,68 @@ Page({
    * 页面的初始数据
    */
   data: {
-    value:"",
-    list:[
-      {name:"22",flag:true}
-    ],
-    a:"",
-    b:""
+    value: "",
+    list: [{
+      name: "22",
+      flag: true
+    }],
+    a: "",
+    b: ""
   },
- getvalue(e){
+  getvalue(e) {
     //  console.log(e.detail.value);
-     this.data.value=e.detail.value
-     this.setData({
-        value:this.data.value
-     })
-     this.render()
-  },
-  add(){
-    if(this.data.value==""){
-      return
-    }
-       let data={
-         name:this.data.value,
-         flag:false,
-       }
-       this.data.list.push(data)
-       this.setData({
-        list:this.data.list
-       })
-       this.render()
-
-  },
-  change(e){
-    // console.log(e.currentTarget.dataset.i);
-    let i=e.currentTarget.dataset.i
-    this.data.list[i].flag=!this.data.list[i].flag
+    this.data.value = e.detail.value
     this.setData({
-      list:this.data.list
+      value: this.data.value
     })
     this.render()
   },
-  del(e){
-    // console.log(e);
-      let i=e.currentTarget.dataset.index
-      this.data.list.splice(i,1)
-      this.setData({
-        list:this.data.list
+  add() {
+    if (this.data.value == "") {
+      wx.showToast({
+        title: '内容不能为空',
+        icon:"error"
       })
-      this.render()
-  },
-  render(){
-    this.data.a=this.data.list.filter(item=>item.flag==false).length
-    this.data.b=this.data.list.filter(item=>item.flag==true).length
+      return
+    }
+    let data = {
+      name: this.data.value,
+      flag: false,
+    }
+    this.data.list.push(data)
     this.setData({
-      a:this.data.a,
-      b:this.data.b
+      value: '',
+      list: this.data.list,
+    })
+    this.render()
+  },
+  change(e) {
+    // console.log(e.currentTarget.dataset.i);
+    let i = e.currentTarget.dataset.i
+    this.data.list[i].flag = !this.data.list[i].flag
+    this.setData({
+      list: this.data.list
+    })
+    this.render()
+  },
+  del(e) {
+    // console.log(e);
+    // wx.showModal({
+    //   cancelColor: 'cancelColor',
+    // })
+    let i = e.currentTarget.dataset.index
+    this.data.list.splice(i, 1)
+    this.setData({
+      list: this.data.list
+    })
+    this.render()
+  },
+  render() {
+    this.data.a = this.data.list.filter(item => item.flag == false).length
+    this.data.b = this.data.list.filter(item => item.flag == true).length
+    this.setData({
+      a: this.data.a,
+      b: this.data.b
     })
   },
   /**
@@ -78,9 +86,7 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow() {
-
-  },
+  onShow() {},
 
   /**
    * 生命周期函数--监听页面隐藏

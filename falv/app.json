@@ -21,11 +21,13 @@
     "list": [{
       "pagePath": "pages/home/home",
       "text": "首页",
-      "iconPath": "/imgs/shouye-2.png"
+      "iconPath": "/imgs/微信图片_20220811194340.png",
+      "selectedIconPath": "/imgs/微信图片_20220811194343.png"
     },{
       "pagePath": "pages/xx/xx",
       "text": "消息",
-      "iconPath": "/imgs/zixun.png"
+      "iconPath": "/imgs/微信图片_20220811194304.png",
+      "selectedIconPath": "/imgs/微信图片_20220811194329.png"
     },
     {
       "pagePath": "pages/zx/zx",
@@ -33,11 +35,13 @@
     },{
       "pagePath": "pages/sz/sz",
       "text": "诉状",
-      "iconPath": "/imgs/jilu-2(1).png"
+      "iconPath": "/imgs/微信图片_20220811194333.png",
+      "selectedIconPath": "/imgs/微信图片_20220811194336.png"
     },{
       "pagePath": "pages/my/my",
       "text": "我的",
-      "iconPath": "/imgs/wode-weixuanzhong.png"
+      "iconPath": "/imgs/微信图片_20220811194347.png",
+      "selectedIconPath": "/imgs/微信图片_20220811194350.png"
     }]
   }
 }

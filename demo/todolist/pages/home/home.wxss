@@ -30,7 +30,7 @@
 }
 .add{
   width: 100rpx; 
-  height: 55rpx;
+  height: 46rpx;
   text-align: center;
   border: 1rpx solid black;
 }

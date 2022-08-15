@@ -2,6 +2,7 @@
 <!-- <text>pages/home/home.wxml</text> -->
 <view class="img">
   <image src="/imgs/banner1.png" class="image"></image>
+  <image></image>
 </view>
 <view class="title">
   <view class="one">

@@ -1,6 +1,6 @@
 <!--pages/home/home.wxml-->
 <view class="top">
-  <input type="text" bindinput="getvalue" class="text" />
+  <input type="text" value="{{value}}" bindinput="getvalue" class="text" />
   <view class="add" bindtap="add">添加</view>
 </view>
 <view class="wei">

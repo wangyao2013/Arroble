@@ -1,0 +1,158 @@
+/* pages/classify/index.wxss */
+.inp{
+  width: 95%;
+  height: 30px;
+  background-color: #eee;
+  border-radius: 50px;
+  margin: auto;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+.one{
+  display: flex;
+}
+.box{
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 10px;
+  display: flex;
+}
+.boxLeft{
+  width: 20%;
+  height: 510px;
+  /* background-color: red; */
+}
+.boxRight{
+  width: 80%;
+  height: 510px;
+  /* background-color: green; */
+}
+.li{
+  height: 102rpx;
+  line-height: 102rpx;
+  background-color: #eee;
+  box-sizing: border-box;
+}
+.active{
+  background-color: #fff;
+  border-left: 4rpx solid red;
+}
+.rightLi{
+  width:100%;
+  height: 180rpx;
+  margin-bottom: 10rpx;
+  display: flex;
+  /* box-sizing: border-box;
+  padding: 15rpx; */
+  /* background-color: red; */
+}
+.liLeft{
+  width: 30%;
+  height: 100%;
+}
+.csName{
+  font-weight: 600;
+}
+.liLeftImg{
+  width: 100%;
+  height: 100%;
+}
+.desc{
+  font-size: 12px;
+  color: rgb(136, 135, 135);
+}
+.price{
+  color: red;
+  font-size: 15px;
+}
+.liRight{
+  width: 70%;
+  box-sizing: border-box;
+  padding: 0 10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.nameTop{
+  font-size: 13px;
+}
+.add{
+  font-size: 15px;
+  color: red;
+  margin-bottom: 10rpx;
+}
+.cz{
+  display: flex;
+  justify-content: space-between;
+}
+.red{
+  border: 1px solid red !important;
+}
+.icon9{
+  font-size: 20px;
+}
+.popup{
+  box-sizing: border-box;
+
+}
+.popLi{
+  width: 100%;
+  height: 220rpx;
+  box-sizing: border-box;
+  padding: 20rpx;
+  display: flex;
+  align-items: center;
+}
+.popImage{
+  width: 25%;
+  height: 100%;
+}
+.image{
+  width: 100%;
+  height: 100%;
+}
+.popDesc{
+  width: 75%;
+  box-sizing: border-box;
+  padding: 20rpx;
+}
+.popDescname{
+  font-size: 15px;
+  font-weight: 600;
+}
+.popPrice{
+  font-size: 15px;
+  font-weight: 600;
+  color: red;
+}
+.child{
+  display: flex;
+  margin-top: 20rpx;
+}
+.color{
+  
+  border: 1px solid rgb(172, 171, 171);
+  box-sizing: border-box;
+  padding: 5rpx;
+  margin-right: 10rpx;
+}
+.lx{
+  box-sizing: border-box;
+  padding: 15rpx;
+  border-bottom: 1px solid #eee;
+}
+.buyNum{
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  padding: 15rpx;
+  align-content: center;
+  justify-content: space-between;
+}
+.van-button--normal{
+  width: 100% !important;
+}
+

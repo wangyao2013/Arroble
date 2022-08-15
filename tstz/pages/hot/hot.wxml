@@ -1,0 +1,9 @@
+<!--pages/hot/hot.wxml-->
+<!-- <text>pages/hot/hot.wxml</text> -->
+<view class="title">
+  <view class="name">
+    {{list.title}}</view>
+</view>
+<view class="body">
+  <rich-text nodes="{{list.content}}"></rich-text>
+</view>

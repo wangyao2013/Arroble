@@ -1,0 +1,7 @@
+<!--pages/start/start.wxml-->
+<swiper class="swiper" 	indicator-dots current="{{swiperCurrent}}" bindchange="swiperChange" >
+  <swiper-item class="item" wx:for="{{list}}" wx:key="index" >
+    <image class="image" src="{{item.picUrl}}"></image>
+  </swiper-item>
+</swiper>
+<button wx:if="{{num==list.length-1}}" class="but" size="mini"  bind:tap="gotoHome" >进入首页</button>

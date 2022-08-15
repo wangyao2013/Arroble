@@ -1,0 +1,3 @@
+<!--pages/preferential/index.wxml-->
+<!-- <text>pages/preferential/index.wxml</text> -->
+<van-empty description="您还没有优惠券哦" />

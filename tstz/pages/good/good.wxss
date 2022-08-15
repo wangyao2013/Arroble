@@ -1,0 +1,170 @@
+/* pages/good/good.wxss */
+.tab{
+  width: 100%;
+  display: flex;
+  height: 50px;
+  line-height: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+}
+.active{
+  border-bottom: 1px solid red;
+}
+.tabOne{
+  width: 33.33%;
+  text-align: center;
+}
+.swiper{
+  width: 100%;
+  height: 600rpx;
+  margin-top: 100rpx;
+}
+.item{
+  width: 100%;
+  height: 100%;
+}
+.image{
+  width: 100%;
+  height: 100%;
+}
+.newPrice{
+  color: red;
+}
+.goodPrice{
+  display: flex;
+  align-items: baseline;
+}
+.oldPrice{
+  text-decoration: line-through;
+  color: rgb(187, 184, 184);
+  margin-left: 20rpx;
+}
+.font{
+  font-size: 40rpx;
+}
+.body{
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 60rpx 10rpx 30rpx 10rpx;
+}
+.goodDesc{
+  font-size: 14px;
+  color: rgb(168, 167, 167);
+}
+.img-ks-lazyload{
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 10rpx;
+}
+p{
+  width: 100%;
+}
+p /deep/ img {
+  width: 100%;
+  height: 100%;
+}
+img{
+  width: 100%;
+}
+.xiangQ{
+  width: 100%;
+  height: 30rpx;
+  line-height: 50rpx;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+  padding: 0 10rpx;
+
+}
+.nb{
+  box-sizing: border-box;
+  padding-left: 15rpx;
+  border-left: 8rpx solid red;
+}
+.show{
+  margin-top: 30rpx;
+  width: 100%;
+}
+.xj{
+  color: red;
+  font-size: 12px;
+}
+.popup{
+  box-sizing: border-box;
+
+}
+.popLi{
+  width: 100%;
+  height: 220rpx;
+  box-sizing: border-box;
+  padding: 20rpx;
+  display: flex;
+  align-items: center;
+}
+.popImage{
+  width: 25%;
+  height: 100%;
+}
+.image{
+  width: 100%;
+  height: 100%;
+}
+.popDesc{
+  width: 75%;
+  box-sizing: border-box;
+  padding: 20rpx;
+}
+.popDescname{
+  font-size: 15px;
+  font-weight: 600;
+}
+.popPrice{
+  font-size: 15px;
+  font-weight: 600;
+  color: red;
+}
+.child{
+  display: flex;
+  margin-top: 20rpx;
+}
+.color{
+  
+  border: 1px solid rgb(172, 171, 171);
+  box-sizing: border-box;
+  padding: 5rpx;
+  margin-right: 10rpx;
+}
+.lx{
+  box-sizing: border-box;
+  padding: 15rpx;
+  border-bottom: 1px solid #eee;
+}
+.buyNum{
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  padding: 15rpx;
+  align-content: center;
+  justify-content: space-between;
+}
+.van-button--normal{
+  width: 100% !important;
+}
+.imagef{
+  width: 50rpx;
+  height: 50rpx;
+}
+.ewm{
+  margin: 0 5px;
+  background-color: #fff !important;
+}
+.box2{
+  display: flex;
+  font-size: 13px;
+  position: absolute;
+  text-align: center;
+  right: 10px;
+  top: -10px;
+}

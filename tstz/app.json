@@ -1,0 +1,73 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/home/index",
+    "pages/classify/index",
+    "pages/preferential/index",
+    "pages/cart/index",
+    "pages/my/index",
+    "pages/start/start",
+    "pages/good/good",
+    "pages/search/search",
+    "pages/goodsList/goodsList",
+    "pages/hot/hot",
+    "pages/aa/aa"
+  ],
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-notice-bar": "@vant/weapp/notice-bar/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-slider": "@vant/weapp/slider/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-goods-action": "@vant/weapp/goods-action/index",
+    "van-goods-action-icon": "@vant/weapp/goods-action-icon/index",
+    "van-goods-action-button": "@vant/weapp/goods-action-button/index",
+    "van-tag": "@vant/weapp/tag/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-stepper": "@vant/weapp//stepper/index",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-empty": "@vant/weapp/empty/index"
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle":"black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "selectedColor": "#f00",
+    "list": [{
+      "pagePath": "pages/home/index",
+      "text": "首页",
+      "iconPath": "/images/首页 (1).png",
+      "selectedIconPath": "/images/首页.png"
+      
+    },{
+      "pagePath": "pages/classify/index",
+      "text": "分类",
+      "iconPath": "/images/分类.png",
+      "selectedIconPath": "/images/分类 (1).png"
+    
+    },{
+      "pagePath": "pages/preferential/index",
+      "text": "优惠券",
+      "iconPath": "/images/优惠券 (1).png",
+      "selectedIconPath": "/images/优惠券.png"
+   
+    },{
+      "pagePath": "pages/cart/index",
+      "text": "购物车",
+      "iconPath": "/images/购物车空 (1).png",
+      "selectedIconPath": "/images/购物车空.png"
+     
+    },{
+      "pagePath": "pages/my/index",
+      "text": "我的",
+      "iconPath": "/images/我的.png",
+      "selectedIconPath": "/images/我的 (1).png"
+
+    }]
+  }
+}

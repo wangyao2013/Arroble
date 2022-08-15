@@ -1,0 +1,23 @@
+/* pages/start/start.wxss */
+.swiper{
+  width: 100vw;
+  height: 100vh;
+}
+.image{
+  width: 100%;
+  height: 100%;
+}
+.item{
+  width: 100%;
+  height: 100%;
+}
+.but{
+  width: 100px;
+  height: 30px;
+  position: absolute;
+  bottom: 30px;
+  line-height: 30rpx;
+  left: 293rpx;
+  margin: auto;
+  display: none;
+}

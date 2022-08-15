@@ -1,0 +1,70 @@
+<!--pages/goodsList/goodsList.wxml-->
+<!-- <text>pages/goodsList/goodsList.wxml</text> -->
+<view class="top">
+  <view class="inp">
+    <input type="text" value="{{value}}" />
+    <van-icon name="search" />
+  </view>
+  <!-- <van-icon class="icon" name="smile-comment-o" /> -->
+  <image bindtap="changeimg" class="img" wx:if="{{flag==true}}" src="/images/qiehuanliebiao.png"></image>
+  <image bindtap="changeimg" class="img" wx:else src="/images/weibiaoti2010102.png"></image>
+</view>
+<view class="tabber">
+  <view class="li {{index==0?'red':''}}" bind:tap="change" data-index="0">综合</view>
+  <view class="li {{index==1?'red':''}}" bind:tap="change" data-index="1">新品</view>
+  <view class="li {{index==2?'red':''}}" bind:tap="change" data-index="2">销量</view>
+  <view class="li {{index==3?'red':''}}" bind:tap="change" data-index="3">价格</view>
+
+</view>
+<van-empty description="暂无商品" wx:if="{{list.length==0}}"/>
+<view class="body" wx:if="{{flag==true}}">
+  <view class="one" bind:tap="gotoGood" data-id="{{item.id}}"  wx:for="{{list}}" wx:key="index">
+    <view class="oneLeft">
+      <image class="image" src="{{item.pic}}"></image>
+    </view>
+    <view class="oneRight">
+      <view class="name">{{item.name}}</view>
+      <view class="desc">{{item.characteristic}}</view>
+      <view class="price">
+        <view class="newPrice">
+          ￥{{item.minPrice}}
+        </view>
+        <view class="oldPrice">
+          ￥{{item.originalPrice}}
+        </view>
+      </view>
+      <view class="mai">
+        已出售{{item.stores}}
+      </view>
+      <view class="icon1">
+        <text></text>
+        <van-icon class="icon2" name="cart-o" />
+      </view>
+    </view>
+  </view>
+</view>
+<view class="box2" wx:else>
+  <view class="one1" bind:tap="gotoGood" data-id="{{item.id}}"  wx:for="{{list}}" wx:key="index">
+    <view class="imageBox">
+      <image class="image" src="{{item.pic}}"></image>
+    </view>
+    <view class="goodBody">
+      <view class="name">
+        {{item.name}}
+      </view>
+      <view class="desc">{{item.characteristic}}</view>
+      <view class="price">
+        <view class="newPrice">
+          ￥{{item.minPrice}}
+        </view>
+        <view class="oldPrice">
+          ￥{{item.originalPrice}}
+        </view>
+      </view>
+      <view class="mai">
+      {{item.numberFav}}人已购买{{item.minBuyNumber}}件
+      </view>
+      <van-icon class="ico" name="cart-o" />
+    </view>
+  </view>
+</view>

@@ -1,0 +1,15 @@
+/* pages/hot/hot.wxss */
+.name{
+  font-weight: 800;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1px solid #eee;
+}
+.title{
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+.body{
+  box-sizing: border-box;
+  padding: 0 20px;
+}

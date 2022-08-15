@@ -1,0 +1,423 @@
+/* pages/home/index.wxss */
+.swiper {
+  width: 100%;
+  height: 160px;
+  padding-top: 120rpx;
+  overflow: hidden;
+}
+
+.item {
+  width: 100%;
+  height: 100%;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+.ul {
+  width: 100%;
+  /* display: flex; */
+  height: 400rpx;
+  /* flex-wrap: wrap; */
+  box-sizing: border-box;
+  padding: 20rpx;
+  background-color: #eee;
+  /* background-color: red; */
+}
+
+.box {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  box-sizing: border-box;
+  padding: 20rpx;
+  border-radius: 20rpx;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  justify-content: space-between;
+  border: 1px solid #eee;
+}
+
+.li {
+  width: 20%;
+  height: 50%;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 5rpx;
+  /* margin: 0 1rpx; */
+}
+
+.img {
+  width: 100%;
+  height: 70%;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+.desc {
+  width: 100%;
+  text-align: center;
+}
+
+.yhLeft {
+  display: flex;
+  font-weight: 800;
+}
+
+.leftTwo {
+  color: red;
+}
+
+.yh {
+  width: 100%;
+  height: 90rpx;
+  line-height: 80rpx;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  display: flex;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #eee;
+}
+
+.yhCont {
+  width: 275px;
+  height: 100%;
+}
+
+.yhRight {
+  color: #ed6a0c;
+}
+
+.notice {
+  width: 300px;
+  height: 100%;
+}
+
+.direct {
+  width: 100%;
+  box-sizing: border-box;
+  height: 300rpx;
+  /* background-color: red; */
+  
+}
+
+.bgi{
+  width: 375px;
+  height: 150px;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+/* border-top-left-radius: 50px; */
+/* border-bottom-left-radius: 25px; */
+}
+
+.ms {
+  width: 100%;
+  height: 30px;
+
+}
+
+.border {
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid rgb(201, 201, 201);
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.text {
+  position: absolute;
+  bottom: -10px;
+  width: 100px;
+  text-align: center;
+  left: 40%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+}
+.top{
+  overflow: hidden;
+  box-sizing: border-box;
+  /* padding: 30px 0 0 0; */
+  height: 60px;
+  position: fixed;
+  /* top: 30px; */
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 999;
+  padding: 0 15rpx;
+}
+.inp{
+  width: 380rpx;
+  background-color: #eee;
+  margin-left: 30rpx;
+  height: 60rpx;
+  box-sizing: border-box;
+  padding-left: 20rpx;
+  border-radius: 10rpx;
+}
+.topView{
+  margin-top: 50rpx;
+  display: flex;
+  align-items: center;
+}
+.xmNmae{
+  font-weight: 900;
+  font-size: 16px;
+}
+
+.ul1 {
+  width: 100%;
+  margin-top: 50rpx;
+  height: 600rpx;
+}
+
+.li1 {
+  width: 100%;
+  height: 50%;
+  display: flex;
+}
+
+.li1Left {
+  width: 40%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 20rpx;
+}
+
+.img1 {
+  width: 100%;
+  height: 100%;
+}
+
+.li1Right {
+  width: 60%;
+  box-sizing: border-box;
+  padding: 20rpx 10rpx;
+}
+
+.fg {
+  width: 100%;
+  height: 15rpx;
+  background-color: rgb(241, 213, 213);
+  border-radius: 20rpx;
+}
+
+.price {
+  color: red;
+  font-size: 20px;
+  display: flex;
+  align-items: baseline;
+}
+
+.goodsDesc {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.oldPrice {
+  margin-left: 10rpx;
+  text-decoration: line-through;
+  font-size: 15px;
+  color: rgb(170, 167, 167);
+  margin-top: 15rpx;
+}
+
+.over {
+  width: 180rpx;
+  /* height: 60rpx; */
+  text-align: center;
+  line-height: 60rpx;
+  border-radius: 30rpx;
+  background-color: red;
+  color: white;
+}
+
+.goodName {
+  font-size: 15px;
+}
+
+.gl {
+  width: 100%;
+  height: 20rpx;
+  background-color: #eee;
+}
+
+.ul2 {
+  width: 100%;
+  margin-top: 60rpx;
+  /* height: 600rpx; */
+  display: flex;
+  /* flex-wrap: wrap; */
+}
+.li2 {
+  width: 48%;
+  height: 400rpx;
+  border: 1px solid #eee;
+  /* margin-bottom: 50px; */
+  /* margin: 0 20rpx; */
+  border-radius: 3%;
+  margin: 0 7px;
+
+}
+.li2Top{
+  width: 100%;
+  /* height: 100%; */
+}
+.image2{
+  width: 100%;
+  height: 138px;
+}
+.names{
+  font-size: 14px;
+  box-sizing: border-box;
+  padding: 0 10rpx;
+}
+.priceHot{
+  color: red;
+  box-sizing: border-box;
+  padding: 0 10rpx;
+}
+.kj{
+  display: flex;
+  width: 100%;
+  height: 250rpx;
+  margin-top: 50rpx;
+  box-sizing: border-box;
+  padding: 0 7px;
+}
+.kjLeft{
+  width: 30%;
+  height: 100%;
+}
+.kjimage{
+  width: 100%;
+  height: 100%;
+}
+.kjRight{
+  box-sizing: border-box;
+  padding: 0 25rpx;
+}
+.kjname{
+  font-size: 12px;
+}
+.characteristic{
+  font-size: 12px;
+  color: rgb(141, 141, 141);
+}
+.hk{
+  margin: 20rpx 0;
+  box-sizing: border-box;
+  padding-left: 15px;
+}
+.custom-button{
+  width: 60rpx;
+  text-align: center;
+  background-color: pink;
+  font-size: 12px;
+  color: red;
+ border-radius: 50px;
+}
+.kjprice{
+  display: flex;
+  align-items: baseline;
+  color: red;
+}
+.kjTwo{
+  font-size: 12px;
+  color: rgb(184, 181, 181);
+  text-decoration: line-through;
+}
+.kjBut{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.pt{
+  width: 100%;
+  height: 450rpx;
+  margin-top: 50rpx;
+  box-sizing: border-box;
+  padding: 0 10rpx;
+  /* background-size: 100% 90%; */
+}
+.ptTop{
+  width: 100%;
+  height: 60%;
+  background-position-x: 50%;
+  background-position-y: 20%;
+  background-size: auto;
+}
+.ptImage{
+  width: 100%;
+  height: 70% !important;
+
+}
+.ptDesc{
+  color: rgb(168, 168, 168);
+  font-size: 14px;
+}
+.ptPrice{
+  display: flex;
+  align-items: baseline;
+ 
+}
+.newPrice{
+  color: red;
+}
+.oldPrice{
+  font-size: 12px;
+}
+.op{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding-right: 30rpx;
+}
+.ul3{
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.li3{
+  width: 48%;
+  box-sizing: border-box;
+  margin: 5px 3px;
+  border: 1px solid #eee;
+  border-radius: 15px;
+}
+
+.goodDesc{
+  box-sizing: border-box;
+  padding: 0 10rpx;
+  font-size: 12px; 
+  color: rgb(182, 182, 182);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+.zt{
+  width: 50rpx;
+  height: 50rpx;
+  margin-bottom: -5rpx;
+}
+.txt{
+  color: rgb(172, 172, 172);
+  font-size: 12px;
+  margin-left: 15rpx;
+  text-decoration: line-through;
+}
+

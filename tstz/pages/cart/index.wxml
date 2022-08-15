@@ -1,0 +1,8 @@
+<!--pages/cart/index.wxml-->
+<!-- <text>pages/cart/index.wxml</text> -->
+<!-- <view class="tit">其他</view> -->
+<van-empty
+  class="custom-image"
+  image="https://img.yzcdn.cn/vant/custom-empty-image.png"
+  description="购物车空空如也"
+/>

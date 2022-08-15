@@ -1,0 +1,212 @@
+<!--pages/home/index.wxml-->
+<!-- <text>pages/home/index.wxml</text> -->
+<view class="top" bind:tap="gotosearch">
+ <view class="topView">
+  <view class="xmNmae">天使童装</view>
+  <view class="input">
+    <input class="inp" type="text" placeholder="输入关键字搜索"/>
+  </view>
+  </view>
+</view>
+<swiper class="swiper" indicator-dots>
+  <swiper-item class="item" wx:for="{{bannerList}}" wx:key="index">
+    <image class="image" mode="widthFix" src="{{item.picUrl}}"></image>
+  </swiper-item>
+</swiper>
+<view class="ul">
+  <view class="box">
+    <view class="li" bind:tap="gotoclass" data-id="{{item.id}}" wx:for="{{categoryList}}" wx:key="index">
+      <view class="img">
+        <image class="image" src="{{item.icon}}"></image>
+      </view>
+      <view class="desc">
+        {{item.name}}
+      </view>
+    </view>
+  </view>
+</view>
+<view class="yh" bind:tap="Gohot">
+  <view class="yhLeft">
+    <view class="leftOne">
+      优惠
+    </view>
+    <view class="leftTwo">
+      咨询
+    </view>
+  </view>
+  <view class="yhCont">
+    <van-notice-bar class="notice" background="white" scrollable text="{{title}}" />
+  </view>
+  <view class="yhRight">
+    <van-icon name="arrow" />
+  </view>
+</view>
+<!-- 好礼直播 -->
+<view class="direct">
+  <view class="bigBox">
+    <image class="bgi"  src="https://dcdn.it120.cc/2021/03/09/57f564f0-edb3-4534-958e-f1a6f7d7e99e.jpg"></image>
+  </view>
+  
+</view>
+<!-- 限时秒杀 -->
+<view class="ms">
+  <view class="border">
+    <view class="text">
+      <image class="zt" src="/images/naozhong.png"></image>
+      <view class="tit">
+        限时秒杀</view>
+    </view>
+  </view>
+</view>
+<view class="ul1">
+  <view class="li1" wx:for="{{miaoshaList}}" bind:tap="gotoGood" data-id="{{item.id}}" wx:key="index">
+    <view class="li1Left">
+      <image class="img1" src="{{item.pic}}"></image>
+    </view>
+    <view class="li1Right">
+      <view class="goodName">
+        {{item.name}}
+      </view>
+      <view class="fg"></view>
+      <view class="goodsDesc">
+        <view class="price">
+          <view>￥{{item.minPrice}}</view>
+          <view class="oldPrice">￥{{item.originalPrice}}</view>
+        </view>
+
+        <!-- <view class="over">已结束</view> -->
+        <van-button round size="small" class="but" color="red">
+          已结束
+        </van-button>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="gl">
+</view>
+<!-- 爆款推荐 -->
+<view class="ms">
+  <view class="border">
+    <view class="text">
+      <image src="/images/huo.png" class="zt"></image>
+      爆品推荐
+    </view>
+  </view>
+</view>
+<view class="ul2">
+  <view class="li2" bind:tap="gotoGood" data-id="{{item.id}}" wx:for="{{bpList}}" wx:key="index">
+    <view class="li2Top">
+      <image class="image2" src="{{item.pic}}"></image>
+    </view>
+    <view class="names">
+      {{item.name}}
+    </view>
+    <view class="priceHot">
+      ￥{{item.minPrice}}
+    </view>
+  </view>
+</view>
+<view class="gl">
+</view>
+<!-- 疯狂砍价 -->
+<view class="ms">
+  <view class="border">
+    <view class="text">
+      <image src="/images/wodekanjia.png" class="zt"></image>
+      疯狂砍价
+    </view>
+  </view>
+</view>
+<view class="kj" bind:tap="gotoGood" data-id="{{item.id}}" wx:for="{{kjlist}}" wx:key="index">
+  <view class="kjLeft">
+    <image class="kjimage" src="{{item.pic}}"></image>
+  </view>
+  <view class="kjRight">
+    <view class="kjname">
+      {{item.name}}
+    </view>
+    <view class="characteristic">
+      {{item.characteristic}}
+    </view>
+    <view class="hk">
+      <van-slider disabled value="{{ currentValue }}" use-button-slot>
+        <view class="custom-button" slot="button">{{ currentValue }}%</view>
+      </van-slider>
+    </view>
+    <view class="kjprice">
+      <view class="kjone">
+        ￥{{item.minBuyNumber}}
+      </view>
+      <view class="kjTwo">
+        ￥{{item.originalPrice}}
+      </view>
+    </view>
+    <view class="kjBut">
+      <van-button round type="danger" size="small">砍价</van-button>
+    </view>
+
+  </view>
+</view>
+<!-- 全民拼团 -->
+<view class="gl">
+</view>
+<view class="ms">
+  <view class="border">
+    <view class="text">
+      <image src="/images/pintuan.png" class="zt"></image>
+      全民拼团
+    </view>
+  </view>
+</view>
+<view class="pt" bind:tap="gotoGood" data-id="{{item.id}}" wx:for="{{ptlist}}" wx:key="index">
+  <view class="ptTop" style="background-image: url('{{item.pic}}')">
+    <!-- <image class="ptImage" src="{{item.pic}}"></image> -->
+  </view>
+  <view class="ptName">
+    {{item.name}}
+  </view>
+  <view class="ptDesc">
+    {{item.characteristic}}
+  </view>
+  <view class="op">
+    <view class="ptPrice">
+      <view class="newPrice">
+        ￥{{item.minScore}}
+      </view>
+      <view class="oldPrice">
+        ￥{{item.originalPrice}}
+      </view>
+
+    </view>
+    <van-button round type="danger" size="small">拼团</van-button>
+  </view>
+</view>
+<view class="gl">
+</view>
+<view class="ms">
+  <view class="border">
+    <view class="text">
+      <image src="/images/gouwu_o.png" class="zt"></image>
+      商品列表
+    </view>
+  </view>
+</view>
+<!-- 商品列表 -->
+<view class="ul3">
+  <view class="li3" bind:tap="gotoGood" data-id="{{item.id}}" wx:for="{{goodsList}}" wx:key="index">
+    <view class="li2Top">
+      <image class="image2" src="{{item.pic}}"></image>
+    </view>
+    <view class="names">
+      {{item.name}}
+    </view>
+    <view class="goodDesc">
+      {{item.characteristic}}
+    </view>
+    <view class="priceHot">
+      <text> ￥{{item.minPrice}}</text>
+      <text class="txt">￥{{item.originalPrice}}</text>
+    </view>
+
+  </view>
+</view>

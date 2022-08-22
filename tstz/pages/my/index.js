@@ -1,10 +1,18 @@
-const {userLogin} =require("../../http/api")
+const {
+  userLogin,
+  updateUserApi,
+  getUserDetailApi
+} = require("../../http/api")
+const AUTH = require('../../utils/auth')
 Page({
   data: {
-    userInfo: {},
     num: 0,
     show: true,
-    flag: true
+    flag: true,
+    boxShow: false,
+    userStatus: 1,
+    base:{}
+
   },
   //事件处理函数
   bindViewTap: function () {
@@ -18,132 +26,192 @@ Page({
     })
     //this.getTf()
   },
-  // 点击优惠
-  yh(){
-    wx.switchTab({
-      url: '/pages/preferential/index',
-    })
-  },
-  getUserProfile: function (res) {
-    wx.getUserProfile({
-      desc: '用于微信账号与平台账号绑定', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
-      success: (res) => {
-        console.log(res);
-        this.setData({
-          userInfo: res,
-          flag: !this.data.flag
-          // userInfoStr: JSON.stringify(res)
-        })
-      },
-      fail: (res) => {
-        console.log("获取用户个人信息失败: ", res);
-        //用户按了拒绝按钮
-        wx.showModal({
-          title: '警告',
-          content: '您点击了拒绝授权，将无法进入小程序，请授权之后再进入!!!',
-          showCancel: false,
-          confirmText: '返回授权',
-          success: function (res) {
-            // 用户没有授权成功，不需要改变 isHide 的值
-            if (res.confirm) {
-              console.log('用户点击了“返回授权”');
-            }
-          }
-        });
-      }
-    })
-  },
+
   onLoad: function () {
 
   },
-  tc() {
-    let token = wx.getStorageSync('token')
-    wx.request({
-      url: `https://api.it120.cc/fyy/user/loginout?token=${token}`,
-      header: {
-        'content-type': ' application/x-www-form-urlencoded'
-      },
-      success: (res) => {
-        console.log(res)
-        this.setData({
-          userInfo: {},
-          show: true,
-          flag: true
-        })
-      }
-    })
-    wx.removeStorageSync('token')
-    wx.switchTab({
-      url: '/pages/my/my',
-    })
-  },
-  //收藏页面
-  sc() {
-    wx.navigateTo({
-      url: '/pages/sc/sc',
-    })
-  },
-  getTf() {
-    let token = wx.getStorageSync('token')
-    wx.request({
-      url: `https://api.it120.cc/Arroble/user/detail?token=${token}`,
-      success: (res) => {
-        console.log(res)
-        if (res.data.code == 0) {
-          //如果后台有这个用户，说明已经登录过了
-          // 调用na这个方法，获取用户信息渲染到页面
-          this.na();
-          this.setData({
-            show: false,
-            flag: true
-          })
-        } else {
-          this.setData({
-            show: true,
-            flag: false
-          })
-        }
-      }
-    })
-  },
-  onShow() {
 
-  },
-  yx() {
-    this.lg();
-    this.getTf()
-  },
-  zb() {
-    console.log(this.data.flag)
-    this.setData({
-      show: false,
-      flag: false
-    })
-    //this.getTf();
-  },
-  na() {
-    wx.getUserInfo({
-      success: (ress) => {
-        console.log(ress)
-        this.setData({
-          userInfo: ress.userInfo
-        })
-      }
-    })
-  },
-  lg() {
-    wx.login({
+  //收藏页面
+  openUserInfo() {
+    const _this=this;
+    wx.getUserProfile({
+      lang: 'zh_CN',
+      desc:'请求用户授权',
       success(res) {
-        // console.log('wx.login:',res)
-        let data={
-           code:res.code
-        }
-         console.log(res.code);
-        userLogin(data).then(res=>{
-          console.log(res);
-        })
-      
+        console.log('用户头像信息：：：',res)
+        //调用更新用户信息方法
+        _this.updateUserInfo(res.userInfo)
       }
     })
   },
+ 
+  async getUserInfo() {
+    const token=wx.getStorageSync('token')
+    const res=await getUserDetailApi(token)
+    //渲染的用户信息
+    const _data={}
+    _data.userinfo=res.data.base
+    console.log(_data);
+    console.log('用户详情：：：：：',res)
+    //判断是否有用户头像和用户昵称
+    if(res.data.base.nick && res.data.base.avatarUrl) {
+
+      this.setData({
+        userStatus:2,
+        base:_data.userinfo
+      })
+
+    }else {
+      this.setData({
+        userStatus:1
+      })
+    }
+
+    this.setData(_data)
+  },
+ 
+  async updateUserInfo(userInfo) {
+    //判断用户是否登录
+    const valid= AUTH.LoginChecked()
+    //如果用户登录了
+    if(valid) {
+      console.log(userInfo);
+      //1.获取token
+      const token=wx.getStorageSync('token')
+      //2.拿到用户昵称  用户头像，省，市，性别，年龄，token
+        const {city,nickName,province,avatarUrl,gender}=userInfo
+
+      //3.调取更新用户接口上面的参数更新到后台数据库
+      await updateUserApi({city,nick:nickName,province,avatarUrl,gender,token})
+
+     //4.刷新当前用户界面 
+      this.getUserInfo()
+    }
+  },
+  async onShow() {
+    //调取用户详情
+   this.getUserInfo()
+
+   const valid=await AUTH.LoginChecked()
+
+   if(valid) {
+     this.getUserInfo()
+   }else {
+     //没登录，得登录一下
+    await AUTH.authLogin()
+   }
+   
+  },
+  // 点击余额
+   ye(){
+     wx.navigateTo({
+       url: '/pages/ye/ye',
+     })
+   },
+   dj(){
+     wx.navigateTo({
+       url: '/pages/dj/dj',
+     })
+   },
+   jf(){
+     wx.navigateTo({
+       url: '/pages/jf/jf',
+     })
+   },
+  //  点击成长
+  cz(){
+    wx.navigateTo({
+      url: '/pages/cz/cz',
+    })
+  },
+
+  // 点击我的订单
+  ckMyorder(e){
+    // console.log(e.currentTarget.dataset.index);
+    let index=e.currentTarget.dataset.index
+    wx.navigateTo({
+      url: `/pages/myOrder/myOrder?index=${index}`,
+    })
+  },
+  // 点击售后
+  sh(){
+    wx.navigateTo({
+      url: `/pages/sh/sh`,
+    })
+  },
+  Gps(){
+    wx.navigateTo({
+      url: `/pages/gps/gps`,
+    })
+  },
+  // 点击回收
+  backOrder(){
+    wx.navigateTo({
+      url: '/pages/backOrder/backOrder',
+    })
+  },
+  // 优惠买菜
+  Yhbuy(){
+    wx.navigateTo({
+      url: '/pages/Yhbuy/Yhbuy',
+    })
+  },
+  yh(){
+   wx.switchTab({
+     url: '/pages/preferential/index',
+   })
+  },
+  // 发票
+  gobill(){
+    wx.navigateTo({
+      url: '/pages/bill/bill',
+    })
+  },
+  // 每日签到
+  day(){
+    wx.navigateTo({
+      url: '/pages/day/day',
+    })
+  },
+  // 开票记录
+  gotoJl(){
+    wx.navigateTo({
+      url: '/pages/jl/jl',
+    })
+  },
+  retailer(){
+    wx.navigateTo({
+      url: '/pages/retailer/retailer',
+    })
+  },
+  // 积分券兑换积分
+  integral(){
+    wx.navigateTo({
+      url: '/pages/integral/integral',
+    })
+  },
+  // 积分兑换成长值
+  Growth(){
+    wx.navigateTo({
+      url: '/pages/Growth/Growth',
+    })
+  },
+  // 点击帮助中心
+  help(){
+    wx.navigateTo({
+      url: '/pages/help/help',
+    })
+  },
+  // 个人信息
+  information(){
+    wx.navigateTo({
+      url: '/pages/information/information',
+    })
+  },
+  // 点击设置
+  set(){
+    wx.navigateTo({
+      url: '/pages/set/set',
+    })
+  }
 })

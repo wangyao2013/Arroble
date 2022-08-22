@@ -1,0 +1,25 @@
+<!--pages/information/information.wxml-->
+<!-- <text>pages/information/information.wxml</text> -->
+<view class="body">
+  <view class="one">
+    <view class="left">绑定手机</view>
+    <van-button size="small" type="primary">立即绑定</van-button>
+  </view>
+  <view class="one" bindtap="address">
+    <view class="left">收货地址</view>
+    <van-icon name="arrow" />
+  </view>
+  <view class="one" bindtap="setPass">
+    <view class="left">交易密码</view>
+    <view class="left">设置交易密码
+      <van-icon name="arrow" /></view>
+  </view>
+  <view class="one" bindtap="gotoMylike">
+    <view class="left">我的收藏</view>
+    <van-icon name="arrow" />
+  </view>
+  <view class="one" bindtap="emit">
+    <view class="left">修改资料</view>
+    <van-icon name="arrow" />
+  </view>
+</view>

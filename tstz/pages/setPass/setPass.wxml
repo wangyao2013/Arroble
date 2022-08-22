@@ -1,0 +1,32 @@
+<!--pages/setPass/setPass.wxml-->
+<!-- <text>pages/setPass/setPass.wxml</text> -->
+<view class="body">
+  <view class="li">
+    <view class="left">
+      交易密码
+    </view>
+    <van-cell-group>
+      <van-field value="{{ value }}" placeholder="请输入交易密码" border="{{ false }}" bind:change="onChange" />
+    </van-cell-group>
+  </view>
+  <view class="li">
+    <view class="left">
+      再次输入
+    </view>
+    <van-cell-group>
+      <van-field value="{{ value }}" placeholder="请再次输入交易密码" border="{{ false }}" bind:change="onChange" />
+    </van-cell-group>
+  </view>
+  <view class="li1">
+    <view class="tit">
+      <van-icon name="info-o" />
+      温馨提示
+    </view>
+    <view class="desc">
+      为了保障您的资金安全，余额支付、优惠买单、申请提现的时候可以需要交易密码
+    </view>
+  </view>
+  <view class="text">
+    <van-button type="primary">设置交易密码</van-button>
+  </view>
+</view>

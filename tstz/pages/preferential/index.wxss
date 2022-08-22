@@ -1,1 +1,29 @@
 /* pages/preferential/index.wxss */
+.top{
+  width: 100%;
+   display: flex;
+
+}
+.li{
+   width: 25%;
+   height: 100rpx;
+   text-align: center;
+   line-height: 100rpx;
+   /* background-color: red; */
+   position: relative;
+
+}
+.after{
+  position: absolute;
+  display: inline-block;
+  content: "";
+  width: 90rpx;
+  height: 0;
+  left: 47rpx;
+  bottom: 10rpx;
+  display: none;
+  border-bottom: 5rpx solid  red;
+}
+.show{
+  display: block;
+}

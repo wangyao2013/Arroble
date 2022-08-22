@@ -1,0 +1,46 @@
+<!--pages/ye/ye.wxml-->
+<!-- <text>pages/ye/ye.wxml</text> -->
+<view class="top">
+  <view class="containe">
+    <!-- 可用余额 -->
+    <view class="name">
+      <view class="tit">
+        可用余额（元）
+      </view>
+      <view class="price">0.00</view>
+    </view>
+    <view class="dj">
+      <view class="tit">
+        冻结金额（元）
+      </view>
+      <view class="price">0.00</view>
+    </view>
+    <view class="lj">
+      <view class="tit">
+        累计消费（元）
+      </view>
+      <view class="price">0.00</view>
+    </view>
+  </view>
+  <view class="cz">
+      <view class="but tx" bindtap="tx">
+        提现
+      </view>
+      <view class="but yj" bindtap="zfyj">
+        押金
+      </view>
+      <view class="but chongz" bindtap="cz">
+        充值
+      </view>
+    </view>
+</view>
+<!-- tab导航 -->
+<van-tabs active="{{ active }}" bind:change="onChange">
+  <van-tab title="资金明细">
+    <van-empty class="empty" description="暂无资金明细" />
+  </van-tab>
+  <van-tab title="提现记录">
+    <van-empty class="empty" description="暂无提现记录" /></van-tab>
+  <van-tab title="押金记录">
+    <van-empty class="empty" description="暂无押金记录" /></van-tab>
+</van-tabs>

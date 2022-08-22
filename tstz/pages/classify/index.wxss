@@ -35,6 +35,7 @@
   line-height: 102rpx;
   background-color: #eee;
   box-sizing: border-box;
+  text-align: center;
 }
 .active{
   background-color: #fff;
@@ -154,5 +155,9 @@
 }
 .van-button--normal{
   width: 100% !important;
+}
+.active2{
+  border: 1px solid red !important;
+  color: red !important;
 }
 

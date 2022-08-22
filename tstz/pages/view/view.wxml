@@ -1,0 +1,14 @@
+<!--pages/view/view.wxml-->
+<!-- <text>pages/view/view.wxml</text> -->
+<view class="box">
+  <view class="po">
+    <view class="text">用户编号</view>
+    <van-cell-group class="group">
+      <van-field value="{{ value }}" placeholder="请填写用户编号" border="{{ false }}" bind:change="onChange" />
+    </van-cell-group>
+  </view>
+  <view class="ne">
+    <van-button type="primary">立即呼叫</van-button>
+  </view>
+
+</view>

@@ -1,8 +1,43 @@
 <!--pages/cart/index.wxml-->
 <!-- <text>pages/cart/index.wxml</text> -->
-<!-- <view class="tit">其他</view> -->
-<van-empty
-  class="custom-image"
-  image="https://img.yzcdn.cn/vant/custom-empty-image.png"
-  description="购物车空空如也"
-/>
+<van-empty class="custom-image" image="https://img.yzcdn.cn/vant/custom-empty-image.png" description="购物车空空如也" wx:if="{{cartList.length==0}}" />
+
+
+<view class="body" wx:else>
+  <view class="tit">其他</view>
+  <view class="li" wx:for="{{cartList.items}}" wx:key="index">
+    <!-- 滑动单元格 -->
+    <van-swipe-cell right-width="{{ 65 }}">
+
+      <van-cell-group class="swipe">
+        <van-checkbox value="{{ item.selected }}" bind:change="changeFlag" data-item="{{item}}"></van-checkbox>
+        <!-- <checkbox bindtap="changeFlag"  checked="{{item.selected}}" ></checkbox> -->
+        <image class="image" src="{{item.pic}}"></image>
+        <view class="show">
+          <view class="name">{{item.name}}</view>
+          <view class="sku">
+            <view class="skuOne" >
+                 <view class="tex" wx:for="{{item.sku}}" wx:for-item="ele" wx:key="i">
+                  {{ele.optionName}}:{{ele.optionValueName}}
+                 </view>
+            </view>
+          </view>
+          <view class="prices">
+            <view class="price"> ￥{{item.price}}</view>
+            <van-stepper value="{{ item.number }}" bind:minus="sub" bind:plus="add" data-item="{{item}}" />
+          </view>
+        </view>
+      </van-cell-group>
+      <view slot="right" class="del">
+        <van-button class="del" bindtap="del" data-item="{{item}}" type="danger">删除</van-button>
+      </view>
+    </van-swipe-cell>
+  </view>
+</view>
+<view class="footer">
+ <view class="price">
+   合计：￥{{cartList.price}}
+ </view>
+ <!-- <button round class="js">去结算</button> -->
+ <van-button type="danger" bindtap="gotoBuy" class="js" size="normal">去结算</van-button>
+</view>

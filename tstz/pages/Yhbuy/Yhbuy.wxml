@@ -1,0 +1,85 @@
+<!--pages/Yhbuy/Yhbuy.wxml-->
+<!-- <text>pages/Yhbuy/Yhbuy.wxml</text> -->
+<view class="body">
+  <view class="li">
+    <view class="tit">消费金额</view>
+    <van-field value="{{ value }}" placeholder="询问服务员本次消费金额" border="{{ false }}" bind:change="onChange" />
+  </view>
+  <view class="li">
+    <view class="tit2">
+      优惠规则
+    </view>
+  </view>
+  <view class="li li2">
+    <view class="tit">
+      减500元
+    </view>
+    <view class="desc">
+      消费满10000元
+    </view>
+  </view>
+  <view class="li li2">
+    <view class="tit">
+      减300元
+    </view>
+    <view class="desc">
+      消费满2000元
+    </view>
+  </view>
+  <view class="li li2">
+    <view class="tit">
+      减150元
+    </view>
+    <view class="desc">
+      消费满1000元
+    </view>
+  </view>
+  <view class="li li2">
+    <view class="tit">
+      减60元
+    </view>
+    <view class="desc">
+      消费满500元
+    </view>
+  </view>
+  <view class="li li2">
+    <view class="tit">
+      减22元
+    </view>
+    <view class="desc">
+      消费满200元
+    </view>
+  </view>
+  <view class="li li2">
+    <view class="tit">
+      减10元
+    </view>
+    <view class="desc">
+      消费满100元
+    </view>
+  </view>
+  <view class="li">
+    <view class="tit2">
+      付款方式
+    </view>
+  </view>
+  <view class="li li3">
+    <view class="tit">
+      <view class="ye">
+        余额支付</view>
+      <view class="num">0</view>
+    </view>
+    <van-radio-group value="{{ radio }}" bind:change="onChange">
+      <van-radio name="1"></van-radio>
+    </van-radio-group>
+  </view>
+  <view class="li li2">
+    <view class="tit">
+      在线支付
+    </view>
+    <van-radio-group value="{{ radio }}" bind:change="onChange">
+      <van-radio name="2"></van-radio>
+    </van-radio-group>
+  </view>
+</view>
+<van-button type="primary">确认支付</van-button>

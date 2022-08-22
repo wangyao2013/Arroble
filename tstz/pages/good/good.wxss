@@ -1,5 +1,5 @@
 /* pages/good/good.wxss */
-.tab{
+.tab {
   width: 100%;
   display: flex;
   height: 50px;
@@ -9,67 +9,83 @@
   left: 0;
   background-color: #fff;
 }
-.active{
+
+.active {
   border-bottom: 1px solid red;
 }
-.tabOne{
+
+.tabOne {
   width: 33.33%;
   text-align: center;
 }
-.swiper{
+
+.swiper {
   width: 100%;
   height: 600rpx;
-  margin-top: 100rpx;
+  /* margin-top: 100rpx; */
 }
-.item{
+
+.item {
   width: 100%;
   height: 100%;
 }
-.image{
+
+.image {
   width: 100%;
   height: 100%;
 }
-.newPrice{
+
+.newPrice {
   color: red;
 }
-.goodPrice{
+
+.goodPrice {
   display: flex;
   align-items: baseline;
 }
-.oldPrice{
+
+.oldPrice {
   text-decoration: line-through;
   color: rgb(187, 184, 184);
   margin-left: 20rpx;
 }
-.font{
+
+.font {
   font-size: 40rpx;
 }
-.body{
+
+.body {
   position: relative;
   width: 100%;
   box-sizing: border-box;
   padding: 60rpx 10rpx 30rpx 10rpx;
 }
-.goodDesc{
+
+.goodDesc {
   font-size: 14px;
   color: rgb(168, 167, 167);
 }
-.img-ks-lazyload{
+
+.img-ks-lazyload {
   box-sizing: border-box;
   width: 100%;
   padding: 0 10rpx;
 }
-p{
+
+p {
   width: 100%;
 }
+
 p /deep/ img {
   width: 100%;
   height: 100%;
 }
-img{
+
+img {
   width: 100%;
 }
-.xiangQ{
+
+.xiangQ {
   width: 100%;
   height: 30rpx;
   line-height: 50rpx;
@@ -78,24 +94,29 @@ img{
   padding: 0 10rpx;
 
 }
-.nb{
+
+.nb {
   box-sizing: border-box;
   padding-left: 15rpx;
   border-left: 8rpx solid red;
 }
-.show{
+
+.show {
   margin-top: 30rpx;
   width: 100%;
 }
-.xj{
+
+.xj {
   color: red;
   font-size: 12px;
 }
-.popup{
+
+.popup {
   box-sizing: border-box;
 
 }
-.popLi{
+
+.popLi {
   width: 100%;
   height: 220rpx;
   box-sizing: border-box;
@@ -103,45 +124,54 @@ img{
   display: flex;
   align-items: center;
 }
-.popImage{
+
+.popImage {
   width: 25%;
   height: 100%;
 }
-.image{
+
+.image {
   width: 100%;
   height: 100%;
 }
-.popDesc{
+
+.popDesc {
   width: 75%;
   box-sizing: border-box;
   padding: 20rpx;
 }
-.popDescname{
+
+.popDescname {
   font-size: 15px;
   font-weight: 600;
 }
-.popPrice{
+
+.popPrice {
   font-size: 15px;
   font-weight: 600;
   color: red;
 }
-.child{
+
+.child {
   display: flex;
   margin-top: 20rpx;
 }
-.color{
-  
+
+.color {
+
   border: 1px solid rgb(172, 171, 171);
   box-sizing: border-box;
   padding: 5rpx;
   margin-right: 10rpx;
 }
-.lx{
+
+.lx {
   box-sizing: border-box;
   padding: 15rpx;
   border-bottom: 1px solid #eee;
 }
-.buyNum{
+
+.buyNum {
   width: 100%;
   display: flex;
   box-sizing: border-box;
@@ -149,22 +179,57 @@ img{
   align-content: center;
   justify-content: space-between;
 }
-.van-button--normal{
+
+.van-button--normal {
   width: 100% !important;
 }
-.imagef{
+
+.imagef {
   width: 50rpx;
   height: 50rpx;
 }
-.ewm{
+
+.ewm {
   margin: 0 5px;
   background-color: #fff !important;
 }
-.box2{
+
+.box2 {
   display: flex;
   font-size: 13px;
   position: absolute;
   text-align: center;
   right: 10px;
   top: -10px;
+}
+
+.properties {
+  margin-top: 30rpx;
+  font-size: 14px;
+}
+
+.checked {
+  display: flex;
+}
+
+.ckone {
+  margin-right: 10rpx;
+}
+
+.properties {
+  justify-content: space-between;
+  display: flex;
+}
+
+.active2 {
+  color: red;
+  border: 1px solid red;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 180rpx;
 }

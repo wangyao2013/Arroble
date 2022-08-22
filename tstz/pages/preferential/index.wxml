@@ -1,3 +1,11 @@
 <!--pages/preferential/index.wxml-->
 <!-- <text>pages/preferential/index.wxml</text> -->
+<view class="top">
+   <view class="li"  wx:for="{{topList}}" bind:tap="changeShow" data-index="{{index}}" wx:key="index">{{item}}
+    <view class="after {{showIndex==index?'show':''}}">
+     
+    </view>
+   </view>
+  
+</view>
 <van-empty description="您还没有优惠券哦" />

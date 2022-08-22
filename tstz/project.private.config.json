@@ -1,5 +1,5 @@
 {
-  "projectname": "%E5%A4%A9%E4%BD%BF%E7%AB%A5%E8%A3%85",
+  "projectname": "tstz",
   "setting": {
     "compileHotReLoad": true,
     "urlCheck": false
@@ -67,6 +67,62 @@
         {
           "name": "",
           "pathName": "pages/aa/aa",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/cart/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/good/good",
+          "query": "id=1215564",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/help/help",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/day/day",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/likeList/likeList",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/tx/tx",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/addAddress/addAddress",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/emit/emit",
           "query": "",
           "launchMode": "default",
           "scene": null

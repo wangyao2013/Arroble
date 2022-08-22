@@ -20,8 +20,8 @@
   </scroll-view>
 
   <scroll-view scroll-y="true" class="boxRight">
- 
-    <view class="rightLi"  wx:for="{{cateRightList}}" wx:key="indexx">
+
+    <view class="rightLi" wx:for="{{cateRightList}}" wx:key="indexx">
       <view class="liLeft" bind:tap="gotoGood" data-id="{{item.id}}">
         <!-- 11111 -->
         <image class="liLeftImg" src="{{item.pic}}"></image>
@@ -35,17 +35,17 @@
           <view class="price">￥{{item.minPrice}}</view>
           <view class="add">
             <!-- <text >111</text> -->
-            <van-icon bind:tap="showPopup" data-item="{{item.id}}" class="icon9" wx:if="{{item.propertyIds.length>0}}" name="add-o" />
-            <van-icon wx:else class="icon9" name="cart-o" />
+            <van-icon bind:tap="showPopup" data-number="{{item}}" data-item="{{item.id}}" class="icon9" wx:if="{{item.propertyIds.length>0}}" name="add-o" />
+            <van-icon bindtap="addCard" data-id="{{item.id}}" wx:else class="icon9" name="cart-o" />
           </view>
         </view>
       </view>
     </view>
-    <van-empty description="暂无商品" wx:if="{{cateRightList.length==0}}"/>
+    <van-empty description="暂无商品" wx:if="{{cateRightList.length==0}}" />
   </scroll-view>
 </view>
 <!-- 弹出层 -->
-<van-popup class="popup" show="{{ show }}" round position="bottom"  bind:close="onClose">
+<van-popup class="popup" show="{{ show }}" round position="bottom" bind:close="onClose">
   <view class="popLi">
     <view class="popImage">
       <image class="image" src="{{goodList.basicInfo.pic}}"></image>
@@ -55,21 +55,22 @@
         {{goodList.basicInfo.name}}
       </view>
       <view class="popPrice">
-        ￥{{goodList.basicInfo.minPrice}}
+        <text wx:if="{{newPrice==''}}">￥{{goodList.basicInfo.minPrice}}</text>
+        <text wx:else>￥{{newPrice}}</text>
       </view>
     </view>
   </view>
   <view class="lx" wx:for="{{goodList.properties}}" wx:key="index">
     <view class="csName">{{item.name}}</view>
     <view class="child">
-      <view class="color {{ele.id==i?'red':''}}" bindtap="changeSize" data-item="{{ele.id}}" wx:for="{{item.childsCurGoods}}" wx:for-item="ele" wx:key="i">
+      <view class="color {{ele.active==true?'active2':''}}" bindtap="changeSize" data-id="{{ele.id}}" data-pid="{{ele.propertyId}}" wx:for="{{item.childsCurGoods}}" wx:for-item="ele" wx:key="i">
         {{ele.name}}
       </view>
     </view>
   </view>
   <view class="buyNum">
     <text>购买数量</text>
-    <van-stepper value="{{ num }}" bind:change="onChange" />
+    <van-stepper value="{{ num }}" bind:minus="sub" bind:plus="add" />
   </view>
-  <van-button class="addCar" bindtap="showPopup" type="danger">加入购物车</van-button>
+  <van-button type="danger" bind:tap="addCart">加入购物车</van-button>
 </van-popup>

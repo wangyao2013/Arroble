@@ -1,0 +1,19 @@
+<!--pages/mf/mf.wxml-->
+<!-- <text>pages/mf/mf.wxml</text> -->
+<view class="body">
+  <view class="top">
+    <image class="image" src="/images/[21-04-13] CNnBNLLHMQh_p0.jpg"></image>
+  </view>
+  <van-divider contentPosition="center">申请成为分销商</van-divider>
+  <!-- 输入框 -->
+  <van-cell-group>
+    <van-field value="{{ username }}" label="用户名" placeholder="请输入用户名" />
+    <van-field value="{{ phone }}" label="手机号" placeholder="请输入手机号" border="{{ false }}" />
+  </van-cell-group>
+  <view class="text">
+   成为分销商后卖出的商品,你可以获得佣金
+  </view>
+ <view class="qw">
+  <van-button type="primary">申请成为分销商</van-button>
+ </view>
+</view>

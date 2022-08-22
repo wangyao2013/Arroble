@@ -1,0 +1,13 @@
+<!--pages/integral/integral.wxml-->
+<!-- <text>pages/integral/integral.wxml</text> -->
+<view class="box">
+ <view class="po">
+  <view class="text">券号</view>
+  <van-cell-group class="group">
+    <van-field value="{{ value }}" placeholder="请输入用户名" border="{{ false }}" bind:change="onChange" />
+  </van-cell-group>
+ </view>
+  <view class="ne">
+    <van-button type="danger">立即兑换</van-button>
+  </view>
+</view>

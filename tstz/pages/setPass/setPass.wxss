@@ -1,0 +1,25 @@
+/* pages/setPass/setPass.wxss */
+.field-index--van-field{
+  padding: 0 !important;
+}
+.li{
+  display: flex;
+  padding: 20rpx;
+  border-bottom: 1px solid #eee;
+}
+.left{
+  width: 200rpx;
+}
+.desc{
+  box-sizing: border-box;
+  padding: 20rpx 40rpx;
+  border-bottom: 1px solid #eee;
+}
+.van-button{
+  width: 100%;
+}
+.text{
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  margin-top: 30rpx;
+}

@@ -1,0 +1,53 @@
+.li{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  margin-top: 30rpx;
+  border-bottom: 1px solid #eee;
+}
+.van-button{
+  width: 95%;
+  margin-top: 30rpx;
+}
+.body{
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
+  text-align: center;
+  /* padding: 0 30rpx; */
+}
+.name{
+  width: 200rpx;
+}
+.field-index--van-field{
+  padding: 0 !important;
+}
+.zhifu{
+  width: 30%;
+  height: 250rpx;
+  /* background-color: red; */
+  box-sizing: border-box;
+  margin: 5rpx 5rpx;
+  border: 1px solid #eee;
+}
+.je{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.iamge{
+  width: 100rpx;
+  height: 100rpx;
+}
+.text{
+  font-size: 13px;
+  text-align: center;
+}
+.op{
+   margin-top: 50rpx;
+}

@@ -1,0 +1,11 @@
+<!--pages/zfyj/zfyj.wxml-->
+<!-- <text>pages/zfyj/zfyj.wxml</text> -->
+<view class="body">
+  <view class="li">
+    <view class="name">押金金额</view>
+    <van-cell-group>
+      <van-field value="{{ value }}" placeholder="请输入押金金额" border="{{ false }}" bind:change="onChange" />
+    </van-cell-group>
+  </view>
+  <van-button type="danger">立即支付</van-button>
+</view>

@@ -1,0 +1,9 @@
+/* pages/retailer/retailer.wxss */
+.van-button{
+  width: 100% !important;
+  margin-top: 20rpx;
+}
+.box{
+  box-sizing: border-box;
+  padding: 0 40rpx;
+}

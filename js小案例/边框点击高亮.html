@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 300px;
+            height: 150px;
+            /* background-color: red; */
+            box-sizing: border-box;
+
+        }
+        .box_top{
+            width: 100%;
+            height: 30px;
+            background-color: #ffebd7;
+            color: #fe791e;
+            border: 1px solid #fe791e;
+            box-sizing: border-box;
+            line-height: 30px;
+        }
+        .box_body{
+            width: 100%;
+            height: 120px;
+            background-color: #fef4eb;
+            box-sizing: border-box;
+            line-height: 30px;
+        }
+        .inp ,.inp2{
+            background-color: transparent;
+            border: none;
+        }
+        .login{
+            width: 80px;
+            height: 30px;
+            background-color: #fe791e;
+            border: none;
+            color: white;
+            border-radius: 7px;
+
+        }
+        .p1{
+            width: 100%;
+            margin-left: 60px;
+            /* margin-top: 30px; */
+        }
+    </style>
+</head>
+<body>
+     <div class="box">
+       <div class="box_top">
+            <p>用户登录</p>
+       </div>
+       <div class="box_body">
+           <p>
+            用户名：<input class="inp" type="text" name="" id="">
+           </p>
+           <p>
+            &emsp;密码：<input  class="inp" type="text" name="" id="">
+           </p>
+           <p>
+           输入名称为您查询好大儿：<input  class="inp2" type="text" name="" id="">
+           </p>
+           <p class="p1">
+            <button class="login">登录</button>
+           </p>
+       </div>
+      
+     </div>
+</body>
+<script>
+   let login=document.querySelector(".login")
+   let inp2=document.querySelector(".inp2")
+   login.addEventListener("click",fn,false)
+   function fn(){
+    let value=inp2.value
+    console.log(value);
+    if(value=="王尧"){
+        let flag=confirm("为您查找到的好大儿有\n宋李煜\n陈京")
+    }else{
+        let flag=confirm("您的好大儿只能是宋李煜和陈京\n别人谁都不好使！！！")
+    }
+
+   }
+</script>
+</html>

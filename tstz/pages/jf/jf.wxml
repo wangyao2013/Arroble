@@ -1,0 +1,9 @@
+<!--pages/jf/jf.wxml-->
+<!-- <text>pages/jf/jf.wxml</text> -->
+<view class="jfTop">
+ <view class="name">可用积分</view>
+ <view class="num">0</view>
+</view>
+<view class="jfBody">
+ 暂无积分明细~
+</view>

@@ -1,0 +1,12 @@
+<!--pages/buy/buy.wxml-->
+<!-- <text>pages/buy/buy.wxml</text> -->
+<view class="box2">
+    <view class="box2Top">
+      <image class="weixin" src="/images/weixin.png"></image>
+    </view>
+    <view class="box2Body">
+      <view class="titbox2">申请获取以下权限</view>
+      <view>授权绑定手机号码</view>
+      <button class="primary" bindtap="openUserInfo" round type="primary">绑定手机号码</button>
+    </view>
+</view>

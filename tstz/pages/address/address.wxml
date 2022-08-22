@@ -1,0 +1,6 @@
+<!--pages/address/address.wxml-->
+<!-- <text>pages/address/address.wxml</text> -->
+<view class="body">
+  <van-empty description="暂无收获地址" />
+  <van-button  icon="add-o" type="primary" bindtap="gotoadd">新增收货地址</van-button>
+</view>

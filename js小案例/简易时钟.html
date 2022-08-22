@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .body {
+            width: 500px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            background-color: black;
+            color: white;
+        }
+
+        span {
+            display: inline-block;
+            background-color: white;
+            width: 50px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            color: black;
+        }
+
+        p {
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body onload="fn()">
+    <div class="body">
+        <p>
+            <span class="time-h"></span>
+            点
+            <span class="time-m">333</span>
+            分
+            <span class="time-s">444</span>
+            秒
+        </p>
+    </div>
+</body>
+<script>
+    let body = document.querySelector(".body")
+
+    function fn() {
+        let time = new Date()
+        let hover = time.getHours()
+        let m = time.getMinutes()
+        m = render(m)
+        let s = time.getSeconds()
+        s = render(s)
+        let time_h = document.querySelector(".time-h").innerHTML = hover
+        let time_m = document.querySelector(".time-m").innerHTML = m
+        let time_s = document.querySelector(".time-s").innerHTML = s
+        setInterval(() => {
+            fn()
+        }, 500);
+    }
+
+    function render(time) {
+        if (time < 10) {
+            time = "0" + time
+        }
+        return time
+    }
+</script>
+
+</html>

@@ -1,0 +1,24 @@
+<!--pages/set/set.wxml-->
+<view class="body">
+  <view class="one">
+    <view class="left">关于我们</view>
+    <van-icon name="arrow" />
+  </view>
+  <view class="one" bindtap="gotoView">
+    <view class="left">视频客服</view>
+    <van-icon name="arrow" />
+  </view>
+  <view class="one" bindtap="clear">
+    <view class="left">意见反馈</view>
+
+      <van-icon name="arrow" />
+  </view>
+  <view class="one" bindtap="cl">
+    <view class="left">清除缓存</view>
+    <van-icon name="arrow" />
+  </view>
+  <view class="one">
+    <view class="left">当前版本</view>
+   <text class="left">12.13.0</text>
+  </view>
+</view>

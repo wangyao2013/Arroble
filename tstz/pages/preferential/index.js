@@ -1,13 +1,33 @@
 // pages/preferential/index.js
+const {getCoupons} =require("../../http/api")
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    topList:["可领","已领","失效","口令"],
+    showIndex:0,
+    CouponsList:[]
   },
-
+  // 点击切换
+  changeShow(e){
+    // console.log(e.currentTarget.dataset.index);
+    this.setData({
+      showIndex:e.currentTarget.dataset.index
+    })
+  },
+ async render(){
+   let data={
+    token:wx.getStorageSync('token'),
+    status:0
+   }
+   let res= await getCoupons(data)
+   console.log(res);
+   this.setData({
+    CouponsList:res.data
+   })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -19,7 +39,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-
+   this.render()
   },
 
   /**

@@ -1,0 +1,4 @@
+/* pages/sh/sh.wxss */
+.van-empty{
+  background-color: #eee;
+}

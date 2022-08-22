@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .body {
+            width: 500px;
+            height: 100px;
+            /* display: flex;
+            align-items: center; */
+            background-color: pink;
+            color: white;
+        }
+
+        span {
+            display: inline-block;
+            background-color: white;
+            width: 50px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            color: black;
+        }
+
+        p {
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body onload="render()">
+    <div class="body">
+        <p>
+
+            <span class="time-m">1</span>
+            分
+            <span class="time-s">40</span>
+            秒
+
+        </p>
+        <p>
+            <button class="but">开始</button>
+        </p>
+    </div>
+</body>
+<script>
+    let but = document.querySelector(".but")
+    let dom = document.querySelector(".time-m")
+    let dom2 = document.querySelector(".time-s")
+    but.addEventListener("click", fn, false)
+    function fn() {
+        let m = dom.innerHTML * 60
+        let s = dom2.innerHTML
+        //  console.log(m);
+        let a = setInterval(() => {
+            s--
+            dom2.innerHTML = s
+            but.disabled=true
+            if (s < 0) {
+                m = 0
+                s = 60
+                dom.innerHTML = m
+                dom2.innerHTML = s
+
+            }
+            if (m == 0 && s == 0) {
+                s = 0
+                dom2.innerHTML = s
+                clearInterval(a)
+                but.disabled=false
+            }
+        }, 100);
+    }
+</script>
+
+</html>

@@ -1,0 +1,36 @@
+<!--pages/clear/clear.wxml-->
+<!-- <text>pages/clear/clear.wxml</text> -->
+<view class="box">
+  <view class="li">
+    <view class="name">
+      姓名
+    </view>
+    <van-cell-group>
+      <van-field value="{{ value }}" placeholder="如何称呼你" border="{{ false }}" bind:change="onChange" />
+    </van-cell-group>
+  </view>
+  <view class="li">
+    <view class="name">
+      联系电话
+    </view>
+    <van-cell-group>
+      <van-field value="{{ value }}" placeholder="方便我们与你联系" border="{{ false }}" bind:change="onChange" />
+    </van-cell-group>
+  </view>
+  <view class="li">
+    <view class="name">
+      微信号
+    </view>
+    <van-cell-group>
+      <van-field value="{{ value }}" placeholder="联系您的微信号" border="{{ false }}" bind:change="onChange" />
+    </van-cell-group>
+  </view>
+  <view >
+    <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" />
+  </view>
+  <van-cell-group>
+      <van-field class="container1" value="{{ value }}" placeholder="请留下你的宝贵建议或建议" border="{{ false }}" bind:change="onChange" />
+    </van-cell-group>
+    <view class="tep">
+      <van-button type="primary">提交反馈</van-button></view>
+</view>

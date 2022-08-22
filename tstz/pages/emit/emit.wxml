@@ -1,0 +1,27 @@
+<view class="body">
+  <view class="one">
+    <view class="left">头像</view>
+    <view class="right">
+     <image class="image" src="/images/[21-04-13] CNnBNLLHMQh_p0.jpg"></image>
+      <van-icon name="arrow" />
+    </view>
+  </view>
+  <view class="one">
+    <view class="left">姓名</view>
+   <view class="text">11</view>
+  </view>
+  <view class="one">
+    <view class="left">性别</view>
+
+   <view class="bn">
+   未知
+   <van-icon name="arrow" />
+   </view>
+  </view>
+  <view class="one">
+    <view class="left">手机号码</view>
+    <van-button size="mini" type="primary">重新绑定</van-button>
+  </view>
+  <van-button  type="primary" bindtap="gotoadd">保存</van-button>
+
+</view>

@@ -1,0 +1,3 @@
+<!--pages/jl/jl.wxml-->
+<!-- <text>pages/jl/jl.wxml</text> -->
+<van-empty description="暂无开票信息" />

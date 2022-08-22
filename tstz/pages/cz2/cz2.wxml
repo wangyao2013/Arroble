@@ -1,0 +1,43 @@
+<view class="body">
+  <view class="li">
+    <view class="name">充值金额</view>
+    <van-cell-group>
+      <van-field value="{{ value }}" placeholder="请输入充值金额" border="{{ false }}" bind:change="onChange" />
+    </van-cell-group>
+  </view>
+  <view class="je">
+       <view class="zhifu">
+        <view class="op">
+          <image class="iamge" src="/images/qiandai (1).png"></image>
+          <view class="text">
+           ￥1010
+          </view>
+        </view>
+       </view>
+       <view class="zhifu">
+        <view class="op">
+          <image class="iamge" src="/images/qiandai (1).png"></image>
+          <view class="text">
+           ￥1000
+          </view>
+        </view>
+       </view>
+       <view class="zhifu">
+        <view class="op">
+          <image class="iamge" src="/images/qiandai (1).png"></image>
+          <view class="text">
+           ￥10000
+          </view>
+        </view>
+       </view>
+       <view class="zhifu">
+        <view class="op">
+          <image class="iamge" src="/images/qiandai (1).png"></image>
+          <view class="text">
+           ￥5000
+          </view>
+        </view>
+       </view>
+  </view>
+  <van-button type="primary" round >立即支付</van-button>
+</view>

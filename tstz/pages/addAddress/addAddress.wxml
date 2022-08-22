@@ -1,0 +1,40 @@
+<!--pages/addAddress/addAddress.wxml-->
+<!-- <text>pages/addAddress/addAddress.wxml</text> -->
+<view class="body">
+  <view class="top">
+    <view class="text">
+      一键获取微信收货地址
+    </view>
+    <van-icon name="arrow" />
+  </view>
+  <view class="fg">
+  </view>
+  <view class="one">
+    <view class="left">省份</view>
+    <view class="right">
+      请选择
+      <van-icon name="arrow" />
+    </view>
+  </view>
+  <view class="one">
+    <view class="left">姓名</view>
+    <van-cell-group>
+      <van-field value="{{ value }}" placeholder="请输入用户名" border="{{ false }}" bind:change="onChange" />
+    </van-cell-group>
+  </view>
+  <view class="one">
+    <view class="left">手机号码</view>
+
+    <van-cell-group>
+      <van-field value="{{ value }}" placeholder="填写手机号码" border="{{ false }}" bind:change="onChange" />
+    </van-cell-group>
+  </view>
+  <view class="one">
+    <view class="left">详细地址</view>
+    <van-cell-group>
+      <van-field value="{{ value }}" placeholder="街道门牌信息" border="{{ false }}" bind:change="onChange" />
+    </van-cell-group>
+  </view>
+  <van-button  type="primary" bindtap="gotoadd">保存</van-button>
+
+</view>

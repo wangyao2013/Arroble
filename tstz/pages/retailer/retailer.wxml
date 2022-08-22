@@ -1,0 +1,7 @@
+<!--pages/retailer/retailer.wxml-->
+<!-- <text>pages/retailer/retailer.wxml</text> -->
+<van-empty description="诚邀您成为分销商" />
+<view class="box">
+  <van-button class="button" round type="primary" bindtap="mf">免费申请 等待管理员审核</van-button>
+  <van-button round type="warning">直接支付3元,立即免审开通</van-button>
+</view>

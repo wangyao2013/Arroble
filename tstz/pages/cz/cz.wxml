@@ -1,0 +1,9 @@
+<!--pages/cz/cz.wxml-->
+<!-- <text>pages/cz/cz.wxml</text> -->
+<view class="jfTop">
+ <view class="name">当前成长值</view>
+ <view class="num">0</view>
+</view>
+<view class="jfBody">
+ 暂无成长值明细~
+</view>

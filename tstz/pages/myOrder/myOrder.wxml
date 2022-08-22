@@ -1,0 +1,19 @@
+<!--pages/myOrder/myOrder.wxml-->
+<!-- <text>pages/myOrder/myOrder.wxml</text> -->
+<van-tabs active="{{ active }}" bind:change="onChange">
+  <van-tab title="全部">
+    <van-empty description="暂无订单" />
+  </van-tab>
+  <van-tab title="待付款">
+    <van-empty description="暂无订单" />
+  </van-tab>
+  <van-tab title="待发货">
+    <van-empty description="暂无订单" />
+  </van-tab>
+  <van-tab title="待收货">
+    <van-empty description="暂无订单" />
+  </van-tab>
+  <van-tab title="待评价">
+    <van-empty description="暂无订单" />
+  </van-tab>
+</van-tabs>

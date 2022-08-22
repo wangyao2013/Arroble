@@ -1,6 +1,7 @@
 // pages/goodsList/goodsList.js
 const {
-  getGoodList
+  getGoodList,
+  addCar
 } = require("../../http/api")
 Page({
 

@@ -1,0 +1,4 @@
+/* pages/zlwt/zlwt.wxss */
+.text{
+  line-height: 50rpx;
+}

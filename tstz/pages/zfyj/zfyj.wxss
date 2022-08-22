@@ -1,0 +1,30 @@
+/* pages/zfyj/zfyj.wxss */
+.li{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  margin-top: 30rpx;
+}
+.van-button{
+  width: 95%;
+  margin-top: 30rpx;
+}
+.body{
+  width: 100%;
+  height: 100vh;
+  background-color: #eee;
+  overflow: hidden;
+  box-sizing: border-box;
+  text-align: center;
+  /* padding: 0 30rpx; */
+}
+.name{
+  width: 200rpx;
+}
+.field-index--van-field{
+  padding: 0 !important;
+}

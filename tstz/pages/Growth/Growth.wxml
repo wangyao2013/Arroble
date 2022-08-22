@@ -1,0 +1,24 @@
+<!--pages/Growth/Growth.wxml-->
+<!-- <text>pages/Growth/Growth.wxml</text> -->
+<view class="jfTop">
+  <view class="name">当前可用积分</view>
+  <view class="num">10</view>
+</view>
+<view class="box">
+  <view class="po">
+    <view class="text">兑换积分</view>
+    <van-cell-group class="group">
+      <van-field value="{{ value }}" placeholder="你希望用多少积分来兑换成长值" border="{{ false }}" bind:change="onChange" />
+    </van-cell-group>
+  </view>
+  <view class="ne">
+    <van-button type="danger">立即兑换</van-button>
+  </view>
+  <view class="dh">
+    兑换规则:
+  </view>
+  <view class="dh fl">
+    <text>获得1成长值</text>
+    <text>每满1积分即可兑换</text>
+  </view>
+</view>

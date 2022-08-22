@@ -18,25 +18,35 @@ Page({
       value: e.detail
     })
   },
-  search1(e){
+  search1(e) {
     // console.log(e.currentTarget.dataset.name);
     wx.navigateTo({
       url: `/pages/goodsList/goodsList?k=${e.currentTarget.dataset.name}`
     })
-  },  
+  },
   search() {
-    this.data.historyList.push(this.data.value)
-    wx.setStorageSync('history', this.data.historyList)
-    // console.log(this.data.value);
+    let falg = false
+    this.data.historyList.forEach(item => {
+      if (item == this.data.value) {
+        falg = true
+      }
+    })
+    if (falg == false) {
+      this.data.historyList.push(this.data.value)
+      wx.setStorageSync('history', this.data.historyList)
+      // console.log(this.data.value);
+    
+    
+    }
     wx.navigateTo({
       url: `/pages/goodsList/goodsList?k=${this.data.value}`
     })
-    this.data.value=""
+    this.data.value = ""
     this.setData({
-      value:this.data.value
+      value: this.data.value
     })
 
-  
+
     this.render()
   },
   onClose(e) {
@@ -59,7 +69,7 @@ Page({
       this.setData({
         historyList: data
       })
-    }else{
+    } else {
       this.setData({
         historyList: []
       })

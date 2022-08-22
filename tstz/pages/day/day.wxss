@@ -1,0 +1,13 @@
+/* pages/day/day.wxss */
+.iamge{
+  width: 200rpx;
+  height: 200rpx;
+}
+.desc{
+  /* display: flex; */
+  text-align: center;
+  color: rgb(110, 108, 108);
+}
+.van-calendar .van-calendar__header .van-calendar__header-title{
+  height: 0 !important;
+}

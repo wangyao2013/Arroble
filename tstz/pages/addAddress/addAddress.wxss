@@ -1,0 +1,32 @@
+/* pages/addAddress/addAddress.wxss */
+.one{
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  /* padding: 0 30rpx; */
+  height: 80rpx;
+  border-bottom: 1px solid #eee;
+  align-items: center;
+}
+.body{
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+.left{
+  font-size: 14px;
+}
+.top{
+  display: flex;
+  height: 130rpx;
+  font-size: 17px;
+  line-height: 130rpx;
+  justify-content: space-between;
+}
+.field-index--van-field{
+  width: 200rpx !important;
+  padding: 0 !important; 
+}
+.van-button{
+  margin-top: 30rpx;
+  width: 100%;
+}

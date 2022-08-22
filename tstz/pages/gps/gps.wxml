@@ -1,0 +1,9 @@
+<!--pages/gps/gps.wxml-->
+<!-- <text>pages/gps/gps.wxml</text> -->
+<van-tabs active="{{ active }}" bind:change="onChange">
+  <van-tab title="京东">
+    <van-empty description="暂无订单" />
+  </van-tab>
+  <van-tab title="拼多多">
+    <van-empty description="暂无订单" /></van-tab>
+</van-tabs>

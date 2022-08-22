@@ -1,0 +1,97 @@
+<!--pages/bill/bill.wxml-->
+<!-- <text>pages/bill/bill.wxml</text> -->
+<view class="body">
+  <view class="box">
+    <view class="title">
+      <view class="tleft">
+        发票填写
+      </view>
+      <view class="tright">
+        读取微信开票信息
+      </view>
+    </view>
+    <!-- 列表 -->
+    <view class="li">
+      <view class="liLeft">
+        工厂账号
+      </view>
+      <view class="liRight">
+        <van-field class="field" value="{{ value }}" placeholder="api工厂注册的手机号码" border="{{ false }}" bind:change="onChange" />
+      </view>
+    </view>
+    <view class="li">
+      <view class="liLeft">
+        发票抬头
+      </view>
+      <view class="liRight">
+        <van-field class="field" value="{{ value }}" placeholder="公司名称" border="{{ false }}" bind:change="onChange" />
+      </view>
+    </view>
+    <view class="li">
+      <view class="liLeft">
+        税号
+      </view>
+      <view class="liRight">
+        <van-field class="field" value="{{ value }}" placeholder="填写税号" border="{{ false }}" bind:change="onChange" />
+      </view>
+    </view>
+    <view class="li">
+      <view class="liLeft">
+        发票内容
+      </view>
+      <view class="liRight">
+        服务费
+      </view>
+    </view>
+    <view class="li">
+      <view class="liLeft">
+        发票金额
+      </view>
+      <view class="liRight">
+        <van-field class="field" value="{{ value }}" placeholder="申请发票全额" border="{{ false }}" bind:change="onChange" />
+      </view>
+    </view>
+    <view class="li">
+      <view class="liLeft">
+        地址与电话
+      </view>
+      <view class="liRight">
+        <van-field class="field" value="{{ value }}" placeholder="发票栏目处填写地址与电话" border="{{ false }}" bind:change="onChange" />
+      </view>
+    </view>
+    <view class="li">
+      <view class="liLeft">
+        开户行与账号
+      </view>
+      <view class="liRight">
+        <van-field class="field" value="{{ value }}" placeholder="发票栏目处填写开户行与账号" border="{{ false }}" bind:change="onChange" />
+      </view>
+    </view>
+    <view class="li">
+      <view class="liLeft">
+        电子邮箱
+      </view>
+      <view class="liRight">
+        <van-field class="field" value="{{ value }}" placeholder="发票将通过邮箱发送给你" border="{{ false }}" bind:change="onChange" />
+      </view>
+    </view>
+    <view class="li">
+      <view class="liLeft">
+        备注
+      </view>
+      <view class="liRight">
+        <van-field class="field" value="{{ value }}" placeholder="如有特殊说明，请告诉我们" border="{{ false }}" bind:change="onChange" />
+      </view>
+    </view>
+  </view>
+  <van-button type="primary">申请开票记录</van-button>
+  <view class="li3 li">
+    <view class="liLeft">
+      备注
+    </view>
+    <view class="liRight">
+      查询
+      <van-icon name="arrow" />
+    </view>
+  </view>
+</view>

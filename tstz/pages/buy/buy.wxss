@@ -1,0 +1,28 @@
+/* pages/buy/buy.wxss */
+.box2Top{
+  box-sizing: border-box;
+  padding-top: 60rpx;
+  padding-bottom: 50rpx;
+  width: 100%;
+  
+  text-align: center;
+  border-bottom: 1rpx solid #eee;
+}
+.box2Body{
+  box-sizing: border-box;
+  padding: 50rpx 30rpx;
+  line-height: 90rpx;
+}
+.titbox2{
+  font-size: 20px;
+}
+.primary{
+  margin-top: 80rpx;
+  width: 600rpx !important;
+  border-radius: 50px;
+}
+.weixin{
+  width: 300rpx !important;
+  height: 180rpx !important;
+  margin: auto;
+}

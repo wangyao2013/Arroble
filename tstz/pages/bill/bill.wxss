@@ -1,0 +1,54 @@
+/* pages/bill/bill.wxss */
+.body{
+  width: 100%;
+  height: 100vh;
+  background-color: #eee;
+  box-sizing: border-box;
+  padding: 20rpx;
+}
+.box{
+  width: 100%;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 30rpx;
+  border-radius: 15px;
+  font-size: 14px;
+}
+.title{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+}
+.tright{
+  color: red;
+}
+.field-index--van-field {
+  padding: 0 !important;
+  flex: 1;
+}
+.li{
+  display: flex;
+  height: 80rpx;
+  line-height: 80rpx;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+.liLeft{
+  width: 200rpx;
+  font-size: 14px;
+}
+.van-field__body{
+  width: 400rpx;
+}
+.van-button{
+  width: 100%;
+  margin: 30rpx 0;
+}
+.li3{
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  background-color: #fff;
+  /* justify-content: space-between; */
+}

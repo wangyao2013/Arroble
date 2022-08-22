@@ -1,143 +1,129 @@
-<view class="top">
-  <image src="{{userInfo.userInfo.avatarUrl}}" wx:if="{{!flag}}"></image>
-  <!-- <image src="/images/daifahuo.png" wx:if="{{!flag}}"></image> -->
-  <view class="topRight">
-    <view class="userId" wx:if="{{!flag}}">用户ID：{{userInfo.userInfo.gender}}</view>
-    <view class="name" wx:if="{{!flag}}">{{userInfo.userInfo.nickName}}</view>
-   
-  </view>
-  <view class="btb" bindtap="yx" wx:if="{{flag}}">立即登录</view>
-</view>
-<view class="top-content">
-  <view>
-    <view>0.00</view>
-    <view>余额</view>
-  </view>
-  <view>
-    <view>0.00</view>
-    <view>冻结</view>
-  </view>
-  <view>
-    <view>0</view>
-    <view>积分</view>
-  </view>
-  <view>
-    <view>0</view>
-    <view>成长值</view>
-  </view>
-</view>
-
-<view class="dingdan"> <text>我的订单</text>
-  <!-- <image src="/image/dd.png" class="dd"></image> -->
-</view>
-<view class="list">
-  <view>
-    <image src="/images/31daifukuan.png"></image>
-    <view>待付款</view>
-  </view>
-  <view>
-    <image src="/images/daifahuo.png"></image>
-    <view>待发货</view>
-  </view>
-  <view>
-    <image class="img1" src="/images/shouhuotuihuo.png"></image>
-    <view>待收货</view>
-  </view>
-  <view>
-    <image src="/images/pingjia.png"></image>
-    <view>待评价</view>
-  </view>
-  <view>
-    <image src="/images/shouhou.png"></image>
-    <view>售后</view>
-  </view>
-
-</view>
-
-<view class="dingdan"> <text>GPS订单</text>
-  <view>管理
-    <van-icon name="arrow" />
-  </view>
-</view>
-<view class="dingdan bd"> <text>回收订单</text>
-  <view>管理
-    <van-icon name="arrow" />
-  </view>
-
-</view>
-
-
-<view class="dingdan bd"> <text>常用功能</text>
-  <!-- <image src="/image/dd.png" class="dd"></image> -->
-</view>
-<!-- 常用功能详情 -->
-<view class="list2">
-  <view>
-    <image src="/images/31daifukuan.png"></image>
-    <view>优惠买菜</view>
-  </view>
-  <view>
-    <image src="/images/jifenmingxi.png"></image>
-    <view>资金明细</view>
-  </view>
-  <view>
-    <image src="/images/fapiao.png"></image>
-    <view>申请发票</view>
-  </view>
-  <view>
-    <image src="/images/fapiao_1.png"></image>
-    <view>开票记录</view>
-  </view>
-  <view bind:tap="yh">
-    <image src="/images/youhuiquan.png"></image>
-    <view>优惠券</view>
-  </view>
-  <view>
-    <image src="/images/qiandao.png"></image>
-    <view>签到赚积分</view>
-  </view>
-
-</view>
-<view class="dingdan text">三级分销</view>
-
-
-<view class="dingdan"> <text>成为分销商</text>
-  <van-icon name="arrow" />
-</view>
-<view class="dingdan text">其他功能</view>
-
-<view class="dingdan"> <text>积分券兑换积分</text>
-  <van-icon name="arrow" />
-
-</view>
-<view class="dingdan"> <text>积分兑换成长值</text>
-  <van-icon name="arrow" />
-</view>
-<view class="dingdan" catchtap="sc"> <text>帮助中心</text>
-  <van-icon name="arrow" />
-</view>
-
-<view class="dingdan"> <text>个人信息</text>
-  <van-icon name="arrow" />
-</view>
-<view class="dingdan"> <text>系统设置</text>
-  <van-icon name="arrow" />
-</view>
-
-
-<view class="dingdan center"> WangYao </view>
-
-<!-- 弹框 -->
-<!-- <view>
-  <van-dialog use-slot title="" show="{{ show }}" show-cancel-button confirm-button-open-type="getUserInfo" bind:close="onClose" bind:getuserinfo="getUserInfo" showConfirmButton="{{false}}" showCancelButton="{{false}}" customStyle="width:300px;height:330px;">
-    <view class="bb">
-      <view class="s">授权登录</view>
-      <view class="tt1">· 请授权小程序登录</view>
-      <view class="tt1">· 我们不会公布您的这些信息</view>
-      <view class="tt1">· 只是为了给您提供更好的服务</view>
-      <view class="yx" bindtap="getUserProfile"  >点击允许</view>
-      <view class="zb" catchtap="zb">暂不登录</view>
+<view class="box1" wx:if="{{userStatus==2}}">
+  <view class="top">
+    <image src="{{base.avatarUrl}}"></image>
+    <view class="topRight">
+      <view class="userId">用户ID：{{base.id}}</view>
+      <view class="name">{{base.nick}}</view>
     </view>
-  </van-dialog>
+  </view>
+  <view class="top-content">
+    <view bindtap="ye">
+      <view>0.00</view>
+      <view>余额</view>
+    </view>
+    <view bindtap="ye">
+      <view>0.00</view>
+      <view>冻结</view>
+    </view>
+    <view bindtap="jf">
+      <view>0</view>
+      <view>积分</view>
+    </view>
+    <view bindtap="cz">
+      <view>0</view>
+      <view>成长值</view>
+    </view>
+  </view>
+
+  <view class="dingdan" bindtap="ckMyorder" data-index="0"> <text>我的订单</text>
+    <van-icon name="arrow" />
+    <!-- <image src="/image/dd.png" class="dd"></image> -->
+  </view>
+  <view class="list">
+    <view bindtap="ckMyorder" data-index="1">
+      <image src="/images/31daifukuan.png"></image>
+      <view>待付款</view>
+    </view>
+    <view bindtap="ckMyorder" data-index="2">
+      <image src="/images/daifahuo.png"></image>
+      <view>待发货</view>
+    </view>
+    <view bindtap="ckMyorder" data-index="3">
+      <image class="img1" src="/images/shouhuotuihuo.png"></image>
+      <view>待收货</view>
+    </view>
+    <view bindtap="ckMyorder" data-index="4">
+      <image src="/images/pingjia.png"></image>
+      <view>待评价</view>
+    </view>
+    <view bindtap="sh">
+      <image src="/images/shouhou.png"></image>
+      <view>售后</view>
+    </view>
+
+  </view>
+
+  <view class="dingdan" bindtap="Gps"> <text>GPS订单</text>
+    <view>管理
+      <van-icon name="arrow" />
+    </view>
+  </view>
+  <view class="dingdan bd" bindtap="backOrder"> <text>回收订单</text>
+    <view>管理
+      <van-icon name="arrow" />
+    </view>
+  </view>
+  <view class="dingdan bd"> <text>常用功能</text>
+    <!-- <image src="/image/dd.png" class="dd"></image> -->
+  </view>
+  <!-- 常用功能详情 -->
+  <view class="list2">
+    <view bindtap="Yhbuy">
+      <image src="/images/31daifukuan.png"></image>
+      <view>优惠买菜</view>
+    </view>
+    <view bindtap="ye">
+      <image src="/images/jifenmingxi.png"></image>
+      <view>资金明细</view>
+    </view>
+    <view bindtap="gobill">
+      <image src="/images/fapiao.png"></image>
+      <view>申请发票</view>
+    </view>
+    <view bindtap="gotoJl">
+      <image src="/images/fapiao_1.png"></image>
+      <view>开票记录</view>
+    </view>
+    <view bind:tap="yh">
+      <image src="/images/youhuiquan.png"></image>
+      <view>优惠券</view>
+    </view>
+    <view bindtap="day">
+      <image src="/images/qiandao.png"></image>
+      <view>签到赚积分</view>
+    </view>
+  </view>
+  <view class="dingdan text">三级分销</view>
+  <view class="dingdan" bindtap="retailer"> <text>成为分销商</text>
+    <van-icon name="arrow" />
+  </view>
+  <view class="dingdan text">其他功能</view>
+  <view class="dingdan" bindtap="integral"> <text>积分券兑换积分</text>
+    <van-icon name="arrow" />
+  </view>
+  <view class="dingdan" bindtap="Growth"> <text>积分兑换成长值</text>
+    <van-icon name="arrow" />
+  </view>
+  <view class="dingdan" bindtap="help" > <text>帮助中心</text>
+    <van-icon name="arrow" />
+  </view>
+  <view class="dingdan" bindtap="information"> <text>个人信息</text>
+    <van-icon name="arrow" />
+  </view>
+  <view class="dingdan" bindtap="set"> <text>系统设置</text>
+    <van-icon name="arrow" />
+  </view>
+  <view class="dingdan center"> WangYao </view>
 </view>
-<button catchtap="yx">点击登录</button> -->
+
+<!-- 本地未登录的样式 -->
+<view class="box2" wx:else>
+  <view class="box2Top">
+    <image class="weixin" src="/images/weixin.png"></image>
+  </view>
+  <view class="box2Body">
+    <view class="titbox2">申请获取以下权限</view>
+    <view>获取你的公开信息（昵称、头像等）</view>
+    <button class="primary" bindtap="openUserInfo" round type="primary">微信一键登录</button>
+  </view>
+</view>

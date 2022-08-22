@@ -1,0 +1,16 @@
+<!--pages/day/day.wxml-->
+<!-- <text>pages/day/day.wxml</text> -->
+<van-calendar
+  title=""
+  readonly="true"
+  color="red"
+  poppable="{{ false }}"
+  show-confirm="{{ false }}"
+  class="calendar"
+  min-date="{{ minDate }}"
+  max-date="{{ maxDate }}"
+/>
+<view class="desc"> 
+  <image class="iamge"  src="/images/zhiwen.png"></image>
+  <view>点击签到</view>
+</view>

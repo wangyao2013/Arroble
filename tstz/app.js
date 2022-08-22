@@ -1,6 +1,23 @@
+const AHTU=require('./utils/auth')
 // app.js
 App({
+  onShow(){
+    let num=wx.getStorageSync('num')
+    console.log(num);
+    wx.setTabBarBadge({
+      index: 3,
+      text: num.toString()
+    })
+  },
   onLaunch() {
+    let num=wx.getStorageSync('num')
+    console.log(num);
+    wx.setTabBarBadge({
+      index: 3,
+      text: num.toString()
+    })
+    AHTU.authLogin()
+    AHTU.LoginChecked()
     // 展示本地存储能力
     const logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())

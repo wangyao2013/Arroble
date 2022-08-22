@@ -209,4 +209,10 @@
     </view>
 
   </view>
+  
+</view>
+<view class="view" wx:if="{{show}}">暂无商品了</view>
+<!-- 回到顶部按钮 -->
+<view class="goBack" bind:tap="gotoTop">
+ <image class="liwu" src="/images/liwuhuodong.png"></image>
 </view>

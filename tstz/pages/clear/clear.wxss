@@ -1,0 +1,27 @@
+/* pages/clear/clear.wxss */
+.li{
+  display: flex;
+  box-sizing: border-box;
+  border-bottom: 1px solid #eee;
+  padding: 20rpx 0;
+}
+.name{
+  width: 200rpx;
+}
+.field-index--van-field {
+  padding: 0 !important;
+}
+.box{
+  box-sizing: border-box;
+  padding: 0 20rpx;
+}
+.container1{
+  height: 300rpx;
+}
+.van-field__control{
+  height: 600rpx;
+}
+.van-button{
+  width: 100%;
+
+}

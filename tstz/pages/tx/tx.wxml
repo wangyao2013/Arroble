@@ -1,0 +1,24 @@
+<!--pages/tx/tx.wxml-->
+<!-- <text>pages/tx/tx.wxml</text> -->
+<view class="body">
+  <view class="one">
+    <view class="left">
+      可用余额
+    </view>
+    <view class="rigth">
+      0</view>
+  </view>
+  <view class="two">
+    <view class="name">体现金额</view>
+    <van-cell-group>
+      <van-field value="{{ value }}" placeholder="请输入本次提现金额" border="{{ false }}" bind:change="onChange" />
+    </van-cell-group>
+  </view>
+  <view class="two">
+    <view class="name">交易密码</view>
+    <van-cell-group>
+      <van-field value="{{ value }}" placeholder="请输入交易密码" border="{{ false }}" bind:change="onChange" />
+    </van-cell-group>
+  </view>
+  <van-button type="primary">申请提现</van-button>
+</view>

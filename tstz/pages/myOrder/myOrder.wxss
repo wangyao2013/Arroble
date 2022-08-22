@@ -1,0 +1,4 @@
+/* pages/myOrder/myOrder.wxss */
+.van-empty{
+  background-color: #eee;
+}

@@ -1,0 +1,17 @@
+<!--pages/likeList/likeList.wxml-->
+<!-- <text>pages/likeList/likeList.wxml</text> -->
+<view class="box">
+  <view class="body">
+    <view class="li" wx:for="{{list}}" wx:key="index">
+      <view class="top">
+        <image class="image" src="{{item.pic}}"></image>
+      </view>
+      <view class="name">
+        {{item.name}}
+      </view>
+      <view class="cz">
+        <van-icon bindtap="del" data-index="{{index}}" data-data="{{item}}" name="delete-o" />
+      </view>
+    </view>
+  </view>
+</view>

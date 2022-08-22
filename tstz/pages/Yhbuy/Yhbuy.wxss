@@ -1,0 +1,36 @@
+/* pages/Yhbuy/Yhbuy.wxss */
+.body{
+  box-sizing: border-box;
+  padding: 20rpx;
+}
+.li{
+  display: flex;
+  box-sizing: border-box;
+  padding: 10rpx 0;
+  height: 80rpx;
+  border-bottom: 1px solid #eee;
+}
+.field-index--van-field{
+  padding: 0 !important;
+  margin-left: 90rpx;
+}
+.tit2{
+  color: rgb(177, 174, 174);
+}
+.li2{
+  display: flex;
+  justify-content: space-between;
+}
+.desc{
+  color: rgb(146, 145, 144);
+}
+.li3{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 110rpx;
+}
+.van-button{
+   width: 100%;
+   margin: auto;
+}

@@ -1,0 +1,3 @@
+<!--pages/sh/sh.wxml-->
+<!-- <text>pages/sh/sh.wxml</text> -->
+<van-empty description="暂无订单" />

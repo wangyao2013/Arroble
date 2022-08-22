@@ -23,7 +23,6 @@ module.exports = {
         data,
         header: {
           'Content-Type': 'application/x-www-form-urlencoded',
-       
         },
         appid:"wx0d5e53904ab1e860",
         secret:"ab8f37f5639fce00a44888949a222adf",

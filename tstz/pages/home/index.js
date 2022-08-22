@@ -15,11 +15,17 @@ Page({
     categoryList: [],
     title: "",
     miaoshaList: [],
-    bpList:[],
-    kjlist:[],
+    bpList: [],
+    kjlist: [],
     currentValue: 0,
-    ptlist:[],
-    goodsList:[]
+    ptlist: [],
+    goodsList: [],
+    show: true,
+    pageInfo: {
+      page: 1,
+      pageSize: 8
+    },
+    floorstatus:false
   },
 
   // 获取分类列表
@@ -42,7 +48,7 @@ Page({
   // 限时秒杀
   async miaosha() {
     let data = {
-      miaosha: true
+      miaosha: true,
     }
     let res = await getGoodList(data)
     this.setData({
@@ -50,64 +56,97 @@ Page({
     })
   },
   // 爆品推荐
- async bp(){
-   let data={
-    recommendStatus:1
-   }
-  let res= await getGoodList(data)
-  // console.log(res);
-  this.setData({
-    bpList:res.data.result
-  })
+  async bp() {
+    let data = {
+      recommendStatus: 1,
+    }
+    let res = await getGoodList(data)
+    // console.log(res);
+    this.setData({
+      bpList: res.data.result
+    })
   },
-  gotoGood(e){
+  gotoGood(e) {
 
     wx.navigateTo({
       url: `/pages/good/good?id=${e.currentTarget.dataset.id}`,
     })
-   },
+  },
   // 疯狂砍价
- async kj(){
-    let data={
-      kanjia:true
+  async kj() {
+    let data = {
+      kanjia: true,
+
     }
-  let res=  await getGoodList(data)
-  console.log(res);
-   this.setData({
-    kjlist:res.data.result
-   })
+    let res = await getGoodList(data)
+    console.log(res);
+    this.setData({
+      kjlist: res.data.result
+    })
   },
   // 全民拼团
- async pt(){
-    let data={
-      pingtuan:true
+  async pt() {
+    let data = {
+      pingtuan: true
     }
-   let res= await getGoodList(data)
-   console.log(res);
-   this.setData({
-    ptlist:res.data.result
-   })
+    let res = await getGoodList(data)
+    console.log(res);
+    this.setData({
+      ptlist: res.data.result
+    })
   },
   // 商品列表 
- async goods(){
- let res= await getGoodList()
- console.log(res);
- this.setData({
-   goodsList:res.data.result
- })
+  async goods() {
+    let res = await getGoodList(this.data.pageInfo)
+    console.log(res);
+    if (res.code == 700) {
+      this.show = true
+    } else {
+      this.data.goodsList = this.data.goodsList.concat(res.data.result)
+      this.show = false
+    }
+
+    this.setData({
+      goodsList: this.data.goodsList,
+      show: this.show
+    })
   },
-  Gohot(){
-   wx.navigateTo({
-     url: '/pages/hot/hot',
-   })
+  Gohot() {
+    wx.navigateTo({
+      url: '/pages/hot/hot',
+    })
+  },
+  gotoTop() {
+    if (wx.pageScrollTo) {
+      wx.pageScrollTo({
+        scrollTop: 0
+      })
+    } else {
+      wx.showModal({
+        title: '提示',
+        content: '当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试。'
+      })
+    }
+  },
+  onPageScroll: function (e) {
+    // console.log(e)
+    if (e.scrollTop > 100) {
+      this.setData({
+        floorstatus: true
+      });
+    } else {
+      this.setData({
+        floorstatus: false
+      });
+    }
   },
 
-  gotoclass(e){
-   console.log(e.currentTarget.dataset.id);
-   wx.setStorageSync('cateid', e.currentTarget.dataset.id)
-   wx.switchTab({
-     url: `/pages/classify/index`,
-   })
+  gotoclass(e) {
+    console.log(e.currentTarget.dataset.id);
+    wx.setStorageSync('cateid', e.currentTarget.dataset.id)
+    wx.switchTab({
+      url: `/pages/classify/index`,
+    })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -115,10 +154,10 @@ Page({
   onLoad(options) {
 
   },
-  gotosearch(){
-wx.navigateTo({
-  url: '/pages/search/search',
-})
+  gotosearch() {
+    wx.navigateTo({
+      url: '/pages/search/search',
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -131,8 +170,8 @@ wx.navigateTo({
    * 生命周期函数--监听页面显示
    */
   async onShow() {
-   
-    
+
+
     const res = await getBanner()
     console.log(res);
     this.setData({
@@ -154,6 +193,7 @@ wx.navigateTo({
 
   },
 
+
   /**
    * 生命周期函数--监听页面卸载
    */
@@ -171,9 +211,14 @@ wx.navigateTo({
   /**
    * 页面上拉触底事件的处理函数
    */
+  // 下拉底部触发
   onReachBottom() {
+    // console.log("111");
 
+    this.data.pageInfo.page++
+    this.goods()
   },
+
 
   /**
    * 用户点击右上角分享

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        .code {
+            font-size: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        敲击按钮显示对应keycode
+    </h1>
+    <div class="code">
+
+    </div>
+</body>
+<script>
+    let dom = document.querySelector("body")
+    let code = document.querySelector(".code")
+    dom.addEventListener("keyup", fn, false)
+
+    function fn(e) {
+        console.log(e.keyCode);
+        code.innerHTML = e.keyCode
+    }
+</script>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        html {
+            background-color: #23384e;
+            color: white;
+        }
+
+        li {
+            background-color: #2b2b2b;
+            border: 1px solid black;
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+        }
+
+        ul {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="top">
+            请选择游戏名称
+        </div>
+        <ul class="ul">
+            <li>地下城与勇士</li>
+            <li>魔兽</li>
+            <li>热血江湖</li>
+            <li>穿越火线</li>
+            <li>大话西游</li>
+        </ul>
+    </div>
+</body>
+<script>
+    let dom = document.querySelector(".top")
+    let ul = document.querySelector(".ul")
+    let li=document.querySelectorAll("li")
+    dom.addEventListener("click", fn, false)
+    let flag = false
+    function fn() {
+        if (flag == false) {
+            ul.style.display = "block"
+            flag = true
+        }else{
+            ul.style.display = "none"
+            flag = false
+        }
+    }
+    for(let i =0;i<li.length;i++){
+        li[i].addEventListener("click",function change(){
+            dom.innerHTML=li[i].innerHTML
+            ul.style.display = "none"
+            flag=false
+        },false)
+    }
+   
+</script>
+
+</html>

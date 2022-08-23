@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let dom=document.querySelector("html")
+    dom.addEventListener("click",fn,false)
+    function fn(e){
+       console.log(e);
+       console.log("111");
+       let x=e.clientX
+       let y=e.clientY
+       let a=confirm("距离x轴"+x+"\n距离y轴"+y)
+    }
+</script>
+</html>

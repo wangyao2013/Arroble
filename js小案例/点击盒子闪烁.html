@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+</body>
+<script>
+    let dom=document.querySelector(".box")
+    dom.addEventListener("click",fn,false)
+    function fn(){
+        let num=0
+       let time=setInterval(()=>{
+            num++
+            if(num==2||num==4){
+                dom.style.display="none"
+            }else{
+                dom.style.display="block"
+            }
+            if(num==5){
+                clearInterval(time) 
+            }   
+        },80)
+    }
+</script>
+</html>

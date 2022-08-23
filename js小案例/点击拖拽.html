@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box_top {
+            width: 200px;
+            height: 30px;
+            background-color: #333333;
+        }
+
+        .box {
+            position: absolute;
+        }
+
+        .box_body {
+            width: 200px;
+            height: 100px;
+            background-color: #999999;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box_top">
+            
+        </div>
+        <div class="box_body">
+            <p>offsetLeft: <span class="sp1">0</span> </p>
+            <p>offsetTop: <span class="sp2">0</span> </p>
+        </div>
+    </div>
+</body>
+<script>
+    let box_top = document.querySelector(".box_top")
+    let sp1=document.querySelector(".sp1")
+    let sp2=document.querySelector(".sp2")
+    let box = document.querySelector(".box")
+    box_top.addEventListener("mousedown", fn, false)
+    let flag = false
+    let disx=""
+    let disy=""
+    function fn(e) {
+        console.log(e);
+        disx = e.pageX - box.offsetLeft;
+        disy = e.pageY - box.offsetTop;
+        sp1.innerHTML=box.offsetLeft
+            sp2.innerHTML=box.offsetTop
+        flag = true
+    }
+    box_top.addEventListener("mousemove", move, false)
+    box_top.addEventListener("mouseup", up, false)
+    function move(e) {
+        if (flag==true) {
+            console.log(e);
+            sp1.innerHTML=box.offsetLeft
+            sp2.innerHTML=box.offsetTop
+            box.style.left =e.pageX - disx+ "px"
+            box.style.top=e.pageY -disy+"px"
+        }
+
+    }
+    function up(e) {
+        flag = false
+    }
+</script>
+
+</html>

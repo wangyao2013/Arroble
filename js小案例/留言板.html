@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .img {
+            width: 30px;
+            height: 30px;
+            margin-left: 10px;
+            opacity: 0.5;
+        }
+
+        .top {
+            background-color: #00ffff;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+
+        .name {
+            display: flex;
+            align-items: center;
+        }
+
+        .box {
+            width: 600px;
+            margin: auto;
+        }
+
+        .text {
+            margin-top: 10px;
+        }
+
+        .p1 {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+
+        }
+
+        .add {
+            width: 80px;
+            height: 30px;
+            border: none;
+
+        }
+
+        .fg {
+            width: 600px;
+            height: 40px;
+            background-color: #e3eaec;
+            overflow: hidden;
+
+        }
+
+        .all {
+            margin-left: 20px;
+            margin-top: 10px;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background-color: white;
+        }
+
+        .center {
+            width: 527px;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            /* width: 500px; */
+            border: 1px solid #eee;
+            box-sizing: border-box;
+            padding: 10px 0;
+        }
+
+        .imgs {
+            width: 70px;
+            height: 70px;
+        }
+
+        .p3 {
+            display: flex;
+        }
+
+        .name {
+            color: #8e748a;
+        }
+
+        .value {
+            margin-left: 10px;
+        }
+
+        .p4 {
+            display: flex;
+            margin-top: 10px;
+            justify-content: space-between;
+        }
+
+        .active {
+            opacity: 1 !important;
+        }
+
+        .active2 {
+            opacity: 1 !important;
+            width: 30px;
+            height: 30px;
+            margin-left: 10px;
+        }
+
+        .op {
+            display: flex;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="top">
+            <h3>来，说说你在做什么，想什么</h3>
+            <div class="name">
+                <input type="text" class="input" name="" id="">
+                <div class="op">
+                    <img class=" active2" src="http://96.43.108.32:4500/i/2022/08/24/vfzi53.jpg" alt="">
+                    <img class="img" src="http://96.43.108.32:4500/i/2022/08/24/vg0k3i.jpg" alt="">
+                    <img class="img" src="http://96.43.108.32:4500/i/2022/08/24/vg1r9n.jpg" alt="">
+                    <img class="img" src="http://96.43.108.32:4500/i/2022/08/24/vg4a9h.jpg" alt="">
+                    <img class="img" src="http://96.43.108.32:4500/i/2022/08/24/vg5ekk.jpg" alt="">
+                </div>
+            </div>
+            <textarea  class="text" name="" id="" cols="75" rows="10"></textarea>
+            <p class="p1">还能输入 <span class="io">140</span> 个字<button class="add">广播</button></p>
+        </div>
+        <div class="body">
+            <div class="fg">
+                <div class="all">
+                    大家在说
+                </div>
+            </div>
+            <ul class="ul">
+              <li>
+                <img class="imgs" src="http://96.43.108.32:4500/i/2022/08/24/vfzi53.jpg" alt="">
+                <div class="center">
+                    <p class="p3">
+                        <span class="name">asdf</span>
+                        <span class="value">aasdf</span>
+                    </p>
+                    <p class="p4">
+                        <span>asdf</span>
+                        <span class="del">删除</span>
+                    </p>
+                </div>
+              </li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    let add = document.querySelector(".add")
+    let input = document.querySelector(".input")
+    let imgs = document.querySelectorAll(".img")
+
+    add.addEventListener("click", fnadd, false)
+
+    for (let i = 0; i < imgs.length; i++) {
+        imgs[i].onmouseover = function () {
+            this.classList.add("active")
+        }
+        imgs[i].onmouseout = function () {
+            this.classList.remove("active")
+        }
+        imgs[i].onclick = function () {
+
+            for (let j = 0; j < imgs.length; j++) {
+                imgs[j].className = "img"
+            }
+            this.className = "active2"
+        }
+
+    }
+    // let ul = document.querySelector(".ul")
+    let text = document.querySelector(".text")
+    
+    function fnadd() {
+        let active2 = document.querySelector(".active2")
+        let src = active2.getAttribute("src")
+        let tetxtValue = text.value
+        let inputValue = input.value
+        let li = document.createElement("li")
+        li.innerHTML = `
+            
+                    <img class="imgs" src="${src}" alt="">
+                    <div class="center">
+                        <p class="p3">
+                            <span class="name">${inputValue}</span>
+                            <span class="value">${tetxtValue}</span>
+                        </p>
+                        <p class="p4">
+                            <span>${new Date().toLocaleString()}</span>
+                            <span class="del">删除</span>
+                        </p>
+                    </div>
+        `
+        ul.append(li)
+        text.value=""
+        input.value=""
+    }
+    let ul = document.querySelector(".ul")
+    let del = document.querySelectorAll(".del")
+
+    for (let i = 0; i < del.length; i++) {
+        console.log(i);
+        ul.onclick = function (e) {
+            console.log(e);
+            if (e.target.classList == "del") {
+                e.target.parentNode.parentNode.parentNode.remove()
+            }
+        }
+    }
+    let gs=140
+    let io=document.querySelector(".io")
+    text.oninput=function(e){
+       console.log(e.target.value);
+       gs=gs-Number(e.target.value.length)
+       console.log(gs);
+       io.innerHTML=gs
+    }
+</script>
+
+</html>

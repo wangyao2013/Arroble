@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        .ul {
+            width: 200px;
+            height: 120px;
+            box-sizing: border-box;
+            padding: 0 20px;
+            line-height: 25px;
+            background-color: #f1f1f1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        .active{
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <p>自定义右键菜单，请在页面点击右键查看效果。</p>
+    <ul class="ul">
+        <li>javaScript学习</li>
+        <li>第一课</li>
+        <li>第二课</li>
+        <li>第三课</li>
+    </ul>
+</body>
+<script>
+    let dom = document.querySelector(".ul")
+    document.oncontextmenu = function (e) {
+        console.log(e);
+        if (e && e.preventDefault) {
+            e.preventDefault(); //防止浏览器默认行为(W3C) 
+        }
+        console.log(e.offsetX);
+        dom.style.left = e.offsetX + "px"
+        dom.style.top = e.offsetY + "px"
+        dom.style.display="block"
+    }
+    document.onclick=function(){
+        dom.style.display="none"
+    }
+    let li=document.querySelectorAll("li")
+    for(let i=0;i<li.length;i++){
+        li[i].onmouseover=function(){
+            for(let j=0;j<li.length;j++){
+               li[j].classList.remove("active")
+            }
+            li[i].classList.add("active")
+        }
+    }
+</script>
+
+</html>
